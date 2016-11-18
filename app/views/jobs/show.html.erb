@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Job type:</strong>
+  <%= @job.job_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @job.description %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @job.position %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @job.location %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @job.status %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @job.day %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  $<%= @job.day.to_i * 100 %>
+</p>
+
+<% if @job.payment.nil? %>
+  <%= link_to 'Pay to publish', jobs_path %>
+<% else %>
+  <%= link_to 'Job listing', jobs_path %>
+<% end %>
