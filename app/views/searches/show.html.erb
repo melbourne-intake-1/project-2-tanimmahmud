@@ -1,0 +1,23 @@
+<h1>Search Result</h1>
+
+<p><%= link_to 'Back', new_search_path %></p>
+
+<% if @search.search_jobs.empty? %>
+
+  <p>No Records Found</p>
+
+<% else %>
+
+  <% @search.search_jobs.each do |c| %>
+    <br>
+
+    <div class="div">
+      <h1><%= c.job_type %></h1>
+      <p>Description: <%= c.description %></p>
+      <p>Position: <%= c.position %></p>
+      <p>Location <%= c.location %></p>
+    </div>
+
+  <% end %>
+
+<% end %>

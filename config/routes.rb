@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :jobs
   resources :transactions, only: [:create]
+  resources :searches
   devise_for :users
   root 'home#index'
 
