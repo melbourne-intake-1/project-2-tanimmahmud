@@ -7,8 +7,11 @@
         <li><%= link_to 'Post a Job', new_job_path %></li>
         <li><%= link_to 'Job Listing', jobs_path %></li>
         <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-        <li><%= link_to 'Inbox', conversations_path %></li>
-        <li><%= link_to 'New Message', new_message_path %></li>
+        <% if unread_messages_count > 0 %>
+          <li><%= link_to "Inbox", mailbox_inbox_path %><span class="badge"><%=unread_messages_count%></span></li>
+        <% else %>
+          <li><%= link_to "Inbox", mailbox_inbox_path %></li>
+        <% end %>
         <li><%= form_tag jobs_path, :method => 'get' do %>
             <%= text_field_tag :search, params[:search] %>
             <%= submit_tag "Search" %>

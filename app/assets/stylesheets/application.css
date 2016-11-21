@@ -11,14 +11,26 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require chosen
  *= require_self
  */
- @import 'bootstrap';
- @import 'bootstrap/theme';
- @import 'chosen';
- .messages {
-   max-height: 400px;
-   overflow-y: auto;
-   margin-bottom: 1em;
-   margin-top: 1em;
- }
+
+@import 'bootstrap';
+@import 'bootstrap/theme';
+ .badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #d65a5a;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+}

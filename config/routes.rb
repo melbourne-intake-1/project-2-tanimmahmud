@@ -2,15 +2,17 @@ Rails.application.routes.draw do
   resources :jobs
   resources :transactions, only: [:create]
   resources :searches
-  resources :messages, only: [:new, :create]
-  resources :conversations, only: [:index, :show, :destroy] do
+  # mailbox folder routes
+  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+  get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+  get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
+
+  # conversations
+  resources :conversations do
     member do
       post :reply
-      post :restore
-      post :mark_as_read
-    end
-    collection do
-    delete :empty_trash
+      post :trash
+      post :untrash
     end
   end
   devise_for :users

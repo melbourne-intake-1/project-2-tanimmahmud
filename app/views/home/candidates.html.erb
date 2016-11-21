@@ -1,5 +1,5 @@
 
-<% page_header "Candidates" %>
+<h1>Candidates</h1>
 
 <%= will_paginate @candidates%>
 
@@ -8,7 +8,7 @@
     <li>
       <strong><%= c.email %></strong>
       <% unless current_user == c %>
-        <%= link_to 'Send message', new_message_path(to: c.id), class: 'btn btn-default btn-sm' %>
+        <%= link_to 'Send message', new_conversation_path(to: c.id), class: 'btn btn-default btn-sm' %>
       <% end %>
     </li>
   <% end %>
