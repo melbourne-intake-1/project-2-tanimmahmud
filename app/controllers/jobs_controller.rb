@@ -6,6 +6,7 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.search(params[:search])
+    # @jobs = current_user.jobs
   end
 
   # GET /jobs/1

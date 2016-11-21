@@ -32,16 +32,9 @@
         <td><%= job.description %></td>
         <td><%= job.position %></td>
         <td><%= job.location %></td>
-        <td>
-          <% if job.payment.present? %>
-            <%= job.status = 'approved' %>
-          <% else %>
-            <%= job.status %>
-          <% end %>
-        </td>
+        <td><%= job.status %></td>
         <td><%= job.day %></td>
         <td>$<%= job.day.to_i * 100 %></td>
-        <% job.amount = job.day.to_i * 100 %>
         <td>
           <% if job.payment.nil? %>
             <%= form_tag transactions_path do  %>

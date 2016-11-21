@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :job_type %>
-    <%= f.text_field :job_type %>
+    <%= f.select :job_type, options_for_select(job_types)  %>
   </div>
 
   <div class="field">
@@ -35,7 +35,7 @@
 
   <div class="field">
     <%= f.label :day %>
-    <%= f.text_field :day %>
+    <%= f.text_field 'day' %>
   </div>
 
   <div class="actions">
