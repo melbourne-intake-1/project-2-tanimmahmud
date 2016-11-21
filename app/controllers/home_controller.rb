@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def candidates
-    @candidates = User.all
+    @candidates = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
   end
 
 end

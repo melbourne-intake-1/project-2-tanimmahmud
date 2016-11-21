@@ -30,6 +30,8 @@ gem 'bootstrap-will_paginate'
 gem 'will_paginate'
 gem "mailboxer"
 gem 'gravatar_image_tag'
+gem 'chosen-rails'
+gem 'jquery-turbolinks'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

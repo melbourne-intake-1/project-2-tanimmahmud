@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :jobs
 
   acts_as_messageable
+
+  def mailboxer_email(object)
+    self.email
+  end
 end

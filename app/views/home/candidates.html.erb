@@ -1,5 +1,17 @@
+
+<% page_header "Candidates" %>
+
+<%= will_paginate @candidates%>
+
 <ul>
   <% @candidates.each do |c| %>
-    <li><%= c.email %></li>
+    <li>
+      <strong><%= c.email %></strong>
+      <% unless current_user == c %>
+        <%= link_to 'Send message', new_message_path(to: c.id), class: 'btn btn-default btn-sm' %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
+
+<%= will_paginate @candidates%>

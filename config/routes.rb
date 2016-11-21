@@ -2,8 +2,17 @@ Rails.application.routes.draw do
   resources :jobs
   resources :transactions, only: [:create]
   resources :searches
-  resources :conversations, only: [:index, :show, :destroy]
   resources :messages, only: [:new, :create]
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+      post :restore
+      post :mark_as_read
+    end
+    collection do
+    delete :empty_trash
+    end
+  end
   devise_for :users
   root 'home#index'
   get 'home/candidates', to: 'home#candidates', as: 'candidates'

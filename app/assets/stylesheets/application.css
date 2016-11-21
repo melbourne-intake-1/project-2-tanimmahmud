@@ -15,7 +15,7 @@
  */
  @import 'bootstrap';
  @import 'bootstrap/theme';
-
+ @import 'chosen';
  .messages {
    max-height: 400px;
    overflow-y: auto;
