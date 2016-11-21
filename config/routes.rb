@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :transactions, only: [:create]
   resources :searches
   resources :conversations, only: [:index, :show, :destroy]
+  resources :messages, only: [:new, :create]
   devise_for :users
   root 'home#index'
   get 'home/candidates', to: 'home#candidates', as: 'candidates'
