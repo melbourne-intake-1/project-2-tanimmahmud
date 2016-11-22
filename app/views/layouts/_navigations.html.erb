@@ -7,6 +7,9 @@
         <li><%= link_to 'Post a Job', new_job_path %></li>
         <li><%= link_to 'Job Listing', jobs_path %></li>
         <li><%= link_to 'Settings', edit_user_registration_path %></li>
+        <% if current_user.profile.present? %>
+          <li><%= link_to "#{current_user.profile.name}", profile_path(current_user.profile) %></li>
+        <% end %>
         <% if unread_messages_count > 0 %>
           <li><%= link_to "Inbox", mailbox_inbox_path %><span class="badge"><%=unread_messages_count%></span></li>
         <% else %>

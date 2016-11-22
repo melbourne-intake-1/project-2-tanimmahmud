@@ -1,0 +1,11 @@
+<% if current_user.role == 'candidate' %>
+  <h1>Resume Details</h1>
+<% elsif current_user.role == 'company' %>
+  <h1>Company Details</h1>
+<% end %>
+
+
+
+<%= render 'form', profile: @profile %>
+
+<%= link_to 'Back', profiles_path %>

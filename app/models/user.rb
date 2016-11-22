@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :jobs
-
+  has_one :profile
   acts_as_messageable
 
   def mailboxer_email(object)
