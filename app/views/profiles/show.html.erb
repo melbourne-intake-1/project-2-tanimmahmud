@@ -12,7 +12,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @profile.image %>
+  <%= image_tag @profile.image_url() %>
 </p>
 
 <p>
@@ -22,7 +22,8 @@
 
 <p>
   <strong>Resume file:</strong>
-  <%= @profile.resume_file %>
+  <button><%= link_to "Download", @profile.resume_file_url,
+                  target: "_blank"%></button>
 </p>
 
 <p>

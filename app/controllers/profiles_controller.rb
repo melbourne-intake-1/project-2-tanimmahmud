@@ -10,16 +10,21 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    
+
   end
 
   # GET /profiles/new
   def new
-    if current_user.profile.present?
-      flash[:notice] = 'You already have a profile'
-      redirect_to root_path
+    if user_signed_in?
+      if current_user.profile.present?
+        flash[:notice] = 'You already have a profile'
+        redirect_to root_path
+      else
+        @profile = Profile.new
+      end
     else
-      @profile = Profile.new
+      flash[:notice] = 'You are not signed in'
+      redirect_to root_path
     end
   end
 

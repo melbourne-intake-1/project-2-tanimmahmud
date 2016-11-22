@@ -1,4 +1,4 @@
-<%= form_for(profile) do |f| %>
+<%= simple_form_for(profile) do |f| %>
   <% if profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -22,8 +22,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image %>
+    <%= f.input :image, as: :file %>
   </div>
 
   <div class="field">
@@ -32,8 +31,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :resume_file %>
-    <%= f.text_field :resume_file %>
+    <%= f.input :resume_file, as: :file %>
   </div>
 
   <div class="field">

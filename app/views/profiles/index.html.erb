@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>Name</th>
       <th>Title</th>
       <th>Image</th>
@@ -20,12 +19,12 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.user %></td>
         <td><%= profile.name %></td>
         <td><%= profile.title %></td>
-        <td><%= profile.image %></td>
+        <td><%= image_tag profile.image_url(:thumb) %></td>
         <td><%= profile.description %></td>
-        <td><%= profile.resume_file %></td>
+        <td><button><%= link_to "Download", profile.resume_file_url,
+                        target: "_blank"%></button></td>
         <td><%= profile.address %></td>
         <td><%= profile.state %></td>
         <td><%= link_to 'Show', profile %></td>
