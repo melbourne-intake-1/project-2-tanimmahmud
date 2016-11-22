@@ -23,18 +23,18 @@
 
   <div class="field">
     <%= f.label :position %>
-    <%= f.text_field :position %>
+    <%= f.select :position, options_for_select(positions) %>
   </div>
 
   <div class="field">
     <%= f.label :location %>
-    <%= f.text_field :location %>
+    <%= f.select :location, options_for_select(locations) %>
   </div>
 
     <%= f.hidden_field :status, :value => 'pending' %>
 
   <div class="field">
-    <%= f.label :day %>
+    <%= f.label :day, 'Number of days' %>
     <%= f.text_field 'day' %>
   </div>
 
