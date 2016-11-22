@@ -1,12 +1,12 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.search(params[:search])
-    # @jobs = current_user.jobs
+    # @jobs = Job.search(params[:search])
+    @jobs = current_user.jobs
   end
 
   # GET /jobs/1
@@ -16,11 +16,20 @@ class JobsController < ApplicationController
 
   # GET /jobs/new
   def new
-    @job = Job.new
+    if current_user.role == 'company'
+      @job = Job.new
+    else
+      flash[:notice] = 'You do not have permission to create new job'
+      redirect_to jobs_path
+    end
   end
 
   # GET /jobs/1/edit
   def edit
+    if current_user != @job.user
+      flash[:notice] = 'You do not have permission to edit this !'
+      redirect_to jobs_listing_path
+    end
   end
 
   # POST /jobs
@@ -57,11 +66,17 @@ class JobsController < ApplicationController
   # DELETE /jobs/1
   # DELETE /jobs/1.json
   def destroy
-    @job.destroy
-    respond_to do |format|
-      format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user == @job.user
+      @job.destroy
+      respond_to do |format|
+        format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      flash[:notice] = 'You do not have permission to delete this !'
+      redirect_to jobs_listing_path
     end
+
   end
 
   private

@@ -5,7 +5,9 @@
       <% if user_signed_in? %>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <li><%= link_to 'Post a Job', new_job_path %></li>
-        <li><%= link_to 'Job Listing', jobs_path %></li>
+        <% if current_user.role == 'company' %>
+          <li><%= link_to 'Job Dashboard', jobs_path %></li>
+        <% end %>
         <li><%= link_to 'Settings', edit_user_registration_path %></li>
         <% if current_user.profile.present? %>
           <li><%= link_to "#{current_user.profile.name}", profile_path(current_user.profile) %></li>
@@ -24,7 +26,7 @@
         <li><%= link_to 'Sign Up as Company', company_path %></li>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
       <% end %>
-      <li><%= link_to 'Job Listing', jobs_path %></li>
+      <li><%= link_to 'Jobs', jobs_listing_path %></li>
       <li><%= link_to 'Candidate Listing', candidates_path %></li>
       <li><%= link_to 'Company Listing', companies_path %></li>
     </ul>

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/candidates', to: 'home#candidates', as: 'candidates'
   get 'home/companies', to: 'home#companies', as: 'companies'
+  get 'home/jobs_listing', to: 'home#jobs_listing', as: 'jobs_listing'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

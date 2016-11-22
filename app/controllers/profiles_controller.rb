@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:show]
   # GET /profiles
   # GET /profiles.json
   def index
@@ -30,6 +30,10 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    if current_user != @profile.user
+      flash[:notice] = 'You do not have permission to edit this !'
+      redirect_to root_path
+    end
   end
 
   # POST /profiles
@@ -66,11 +70,17 @@ class ProfilesController < ApplicationController
   # DELETE /profiles/1
   # DELETE /profiles/1.json
   def destroy
-    @profile.destroy
-    respond_to do |format|
-      format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+     if current_user == @profile.user
+       @profile.destroy
+       respond_to do |format|
+         format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
+         format.json { head :no_content }
+       end
+     else
+       flash[:notice] = 'You can not delete profile'
+       redirect_to root_path
+     end
+
   end
 
   private
