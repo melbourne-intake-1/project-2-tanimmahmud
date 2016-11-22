@@ -6,7 +6,7 @@
 <ul>
   <% @candidates.each do |c| %>
     <li>
-      <strong><%= c.email %></strong>
+      <strong><%= c.email%> - <%= c.role %></strong>
       <% unless current_user == c %>
         <%= link_to 'Send message', new_conversation_path(to: c.id), class: 'btn btn-default btn-sm' %>
       <% end %>

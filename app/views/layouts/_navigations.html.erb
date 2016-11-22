@@ -6,7 +6,7 @@
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <li><%= link_to 'Post a Job', new_job_path %></li>
         <li><%= link_to 'Job Listing', jobs_path %></li>
-        <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+        <li><%= link_to 'Settings', edit_user_registration_path %></li>
         <% if unread_messages_count > 0 %>
           <li><%= link_to "Inbox", mailbox_inbox_path %><span class="badge"><%=unread_messages_count%></span></li>
         <% else %>
@@ -17,7 +17,8 @@
             <%= submit_tag "Search" %>
           <% end %></li>
       <% else %>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li><%= link_to 'Sign Up as Candidate', candidate_path %></li>
+        <li><%= link_to 'Sign Up as Company', company_path %></li>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
       <% end %>
       <li><%= link_to 'Job Listing', jobs_path %></li>

@@ -15,7 +15,11 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
-  devise_for :users
+  devise_scope :user do
+    get "candidate" => "devise/registrations#new", :role => 'candidate'
+    get "company" => "devise/registrations#new", :role => 'company'
+  end
+  devise_for :users, controllers: { registrations: "registrations"}
   root 'home#index'
   get 'home/candidates', to: 'home#candidates', as: 'candidates'
 
