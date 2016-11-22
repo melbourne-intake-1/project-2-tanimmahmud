@@ -1,1 +1,143 @@
-<h1>Welcome to jrDevjobs</h1>
+
+  <%= render 'home/slides' %>
+
+  <!-- ============ JOBS START ============ -->
+
+  <div class="text-center">
+
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#recent-jobs-tab" aria-controls="home" role="tab" data-toggle="tab"> RECENT JOBS </a></li>
+				<li role="presentation"><a href="#recent-resumes-tab" aria-controls="profile" role="tab" data-toggle="tab"> RECENT RESUMES</a></li>
+			</ul>
+
+      <!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="recent-jobs-tab">
+
+					<section id="jobs">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-8">
+									<h2>Recent Jobs</h2>
+
+                  <%= render 'home/recent_jobs' %>
+
+                  <a class="btn btn-primary" id="more-jobs">
+										<span class="more">Show More Jobs <i class="fa fa-arrow-down"></i></span>
+										<span class="less">Show Less Jobs <i class="fa fa-arrow-up"></i></span>
+									</a>
+
+								</div>
+                <div class="col-sm-4">
+									<h2>Featured Jobs</h2>
+									<a href="#">
+										<img src="images/featured-job.jpg" alt="Featured Job" class="img-responsive" />
+										<div class="featured-job">
+											<img src="images/job1.jpg" alt="" class="img-circle" />
+											<div class="title">
+												<h5>Web Designer</h5>
+												<p>Amazon</p>
+											</div>
+											<div class="data">
+												<span class="city"><i class="fa fa-map-marker"></i>New York City</span>
+												<span class="type full-time"><i class="fa fa-clock-o"></i>Full Time</span>
+												<span class="sallary"><i class="fa fa-dollar"></i>45,000</span>
+											</div>
+											<div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique euismod lorem, a consequat orci consequat a. Donec ullamcorper tincidunt nunc, ut aliquam est pellentesque porta. In neque erat, malesuada sit amet orci ac, laoreet laoreet mauris.</div>
+											<div class="text-center">
+												<div style="margin-top: 20px" class="btn btn-sm btn-primary">Apply for this Job</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				</div>
+        <div role="tabpanel" class="tab-pane" id="recent-resumes-tab">
+
+          <!-- ============ JOBS END ============ -->
+
+          <!-- ============ CANDIDATES START ============ -->
+
+
+        <section id="resumes">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12" >
+                <h2>Candidates</h2>
+
+                <%= render 'home/recent_candidates' %>
+
+                <a class="btn btn-primary" id="more-resumes">
+                  <span class="more">Show More Resumes <i class="fa fa-arrow-down"></i></span>
+                  <span class="less">Show Less Resumes <i class="fa fa-arrow-up"></i></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CANDIDATES END ============ -->
+  <hr>
+  <!-- ============ PRICING START ============ -->
+
+		<section id="pricing" class="text-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h1>Plans &amp; Pricing</h1>
+						<h4>Choose a package that fits your needs</h4>
+					</div>
+				</div>
+				<div class="row pricing">
+					<div class="col-sm-4">
+						<ul>
+							<li class="title">Free</li>
+							<li class="price">$0</li>
+							<li>1 job posting</li>
+							<li>No featured jobs</li>
+							<li>Displayed for 5 days</li>
+							<li><a href="post-a-job.html" class="btn btn-primary">Choose</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4">
+						<ul class="popular">
+							<li class="title">Startup</li>
+							<li class="price">$19</li>
+							<li>1 job posting</li>
+							<li>No featured jobs</li>
+							<li>Displayed for 30 days</li>
+							<li><a href="post-a-job.html" class="btn btn-primary">Choose</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4">
+						<ul>
+							<li class="title">Enterprise</li>
+							<li class="price">$39</li>
+							<li>5 job postings</li>
+							<li>3 featured jobs</li>
+							<li>Displayed for 90 days</li>
+							<li><a href="post-a-job.html" class="btn btn-primary">Choose</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ PRICING END ============ -->
+
+    <!-- ============ TESTIMONIALS START ============ -->
+    <%= render 'home/testimonials' %>
+    <!-- ============ TESTIMONIALS END ============ -->
+
+    <!-- ============ CONTACT START ============ -->
+
+		<%= render 'home/contact' %>
+
+		<!-- ============ CONTACT END ============ -->
