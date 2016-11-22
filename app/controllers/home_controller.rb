@@ -10,7 +10,11 @@ class HomeController < ApplicationController
   end
 
   def candidates
-    @candidates = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
+    @candidates = User.where('role': 'candidate').order('created_at DESC').paginate(page: params[:page], per_page: 30)
+  end
+
+  def companies
+    @companies = User.where('role': 'company').order('created_at DESC').paginate(page: params[:page], per_page: 30)
   end
 
 end

@@ -1,0 +1,16 @@
+<h1>Companies</h1>
+
+<%= will_paginate @companies%>
+
+<ul>
+  <% @companies.each do |c| %>
+    <li>
+      <strong><%= link_to c.email, profile_path(c.profile)%> - <%= c.role %></strong>
+      <% unless current_user == c %>
+        <%= link_to 'Send message', new_conversation_path(to: c.id), class: 'btn btn-default btn-sm' %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate @companies%>
