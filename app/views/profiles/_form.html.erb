@@ -51,16 +51,15 @@
       <div class="col-sm-6">
         <div class="form-group" >
           <%= f.label :address %>
-          <%= f.text_area :address, id: 'address',class: 'form-control', name: 'address', onFocus: "geolocate()", placeholder: "Eg. 85 Droop Street, Footscray"%>
+          <%= f.text_area :address, id: 'address',class: 'form-control', onFocus: "geolocate()"%>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
         <div class="form-group" id="resume-content-group">
-          <label>Resume Content</label>
-          <label for="resume-content">Resume Content</label>
-          <div class="textarea form-control" id="resume-content"></div>
+          <%= f.label :description %>
+          <%= f.text_area :description, id: 'resume-content',class: 'form-control'%>
         </div>
       </div>
     </div>
