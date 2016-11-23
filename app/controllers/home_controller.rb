@@ -7,7 +7,7 @@ class HomeController < ApplicationController
       # If user has just signed up, make them fill out their profile
       redirect_to new_profile_url if @profile.nil?
       @experiences = current_user.experiences
-      if @experience.nil? && current_user.role == 'candidate'
+      if @experiences.nil? && current_user.role == 'candidate'
         flash[:notice] = "Please provide your experiences"
         redirect_to new_experience_url
       end

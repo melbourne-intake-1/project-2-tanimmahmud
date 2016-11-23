@@ -11,6 +11,11 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @experiences = @profile.user.experiences
+    if @profile.user.schools.nil? && current_user.role == 'candidate'
+      flash[:notice] = "Please list your schools name"
+      redirect_to new_school_url
+    end
+    @schools = @profile.user.schools
   end
 
   # GET /profiles/new

@@ -1,0 +1,15 @@
+<%= simple_form_for(@school) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :qualification %>
+    <%= f.input :start %>
+    <%= f.input :end %>
+    <%= f.input :notes %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
