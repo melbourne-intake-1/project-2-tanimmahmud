@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :socials
   resources :skills
   resources :schools
   resources :experiences

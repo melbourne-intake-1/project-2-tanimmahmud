@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :jobs
   has_one :profile
+  has_many :socials
   has_many :experiences
   has_many :schools
   has_many :skills

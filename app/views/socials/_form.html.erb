@@ -1,0 +1,13 @@
+<%= simple_form_for(@social) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.label :network %>
+    <%= f.select :network, options_for_select(socials)  %>
+    <%= f.input :username %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

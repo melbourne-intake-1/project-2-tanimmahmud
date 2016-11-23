@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
     @experiences = @profile.user.experiences
     @schools = @profile.user.schools
     @skills = @profile.user.skills
+    @socials = @profile.user.socials
   end
 
   # GET /profiles/new
