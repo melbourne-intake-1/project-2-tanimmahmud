@@ -1,14 +1,53 @@
-<%= simple_form_for(@experience) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :employer %>
-    <%= f.input :job_title %>
-    <%= f.input :duration %>
-    <%= f.input :responsibilities %>
-  </div>
+<div class="container">
+  <%= simple_form_for(@experience) do |f| %>
+    <% if @experience.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+        <ul>
+        <% @experience.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>Experience details</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :employer %>
+          <%= f.text_field :employer, placeholder: 'eg. Coder Factory', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :job_title %>
+          <%= f.text_field :job_title, placeholder: 'eg. Web Developer', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :duration %>
+          <%= f.text_field :duration, placeholder: 'eg. 2 years', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :responsibilities %>
+          <%= f.text_area :responsibilities, placeholder: '(Optional)', class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2 actions">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,11 +1,35 @@
-<%= simple_form_for(@skill) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
+<div class="container">
+  <%= simple_form_for(@skill) do |f| %>
+    <% if @skill.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@skill.errors.count, "error") %> prohibited this skill from being saved:</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+        <ul>
+        <% profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+<!-- Resume Details Start -->
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Skill details</h2>
+    </div>
   </div>
-<% end %>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: 'eg.Html', class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-2 actions">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

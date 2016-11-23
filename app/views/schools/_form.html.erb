@@ -1,15 +1,59 @@
-<%= simple_form_for(@school) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :qualification %>
-    <%= f.input :start %>
-    <%= f.input :end %>
-    <%= f.input :notes %>
-  </div>
+<div class="container">
+  <%= simple_form_for(@school) do |f| %>
+    <% if @school.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@school.errors.count, "error") %> prohibited this school from being saved:</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+        <ul>
+        <% @school.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>School details</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, placeholder: 'eg. Coder Factory', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :qualification %>
+          <%= f.text_field :qualification, placeholder: 'eg. Bachelor of Computer Science', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :start %>
+          <%= f.text_field :start, placeholder: 'eg. 2009', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :end %>
+          <%= f.text_field :end, placeholder: 'eg. 2013', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :notes %>
+          <%= f.text_area :notes, placeholder: '(Optional)', class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2 actions">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>
