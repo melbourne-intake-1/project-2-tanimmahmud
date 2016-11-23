@@ -130,7 +130,7 @@ hr {
 	}
 
 	h2 {
-		margin-bottom: 50px;
+		margin: 50px;
 	}
 
 	h2::after {
