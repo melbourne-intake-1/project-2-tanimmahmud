@@ -13,7 +13,6 @@
           <li><%= link_to 'Candidate Listing', candidates_path, method: :get %></li>
           <li><%= link_to 'Company Listing', companies_path, method: :get %></li>
           <% if user_signed_in? %>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
             <li><%= link_to 'Post a Job', new_job_path, method: :get %></li>
             <% if current_user.role == 'company' %>
               <li><%= link_to 'Job Dashboard', jobs_path, method: :get %></li>
@@ -27,6 +26,7 @@
               <li><%= link_to "Inbox", inbox_path, method: :get %></li>
             <% end %>
             <li><%= link_to 'Settings', edit_user_registration_path, method: :get %></li>
+						<li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Sign Up as Candidate', candidate_path, method: :get %></li>
             <li><%= link_to 'Sign Up as Company', company_path, method: :get %></li>
