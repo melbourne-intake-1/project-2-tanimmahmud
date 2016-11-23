@@ -8,30 +8,29 @@
 					<a class="fm-button"><i class="fa fa-close fa-2x"></i></a>
 				</div>
 				<ul class="nav">
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Jobs', jobs_listing_path %></li>
-          <li><%= link_to 'Candidate Listing', candidates_path %></li>
-          <li><%= link_to 'Company Listing', companies_path %></li>
-					<li><a href="post-a-job.html">Post a job</a></li>
+          <li><%= link_to 'Home', root_path, method: :get %></li>
+          <li><%= link_to 'Jobs', jobs_listing_path, method: :get %></li>
+          <li><%= link_to 'Candidate Listing', candidates_path, method: :get %></li>
+          <li><%= link_to 'Company Listing', companies_path, method: :get %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to 'Post a Job', new_job_path %></li>
+            <li><%= link_to 'Post a Job', new_job_path, method: :get %></li>
             <% if current_user.role == 'company' %>
-              <li><%= link_to 'Job Dashboard', jobs_path %></li>
+              <li><%= link_to 'Job Dashboard', jobs_path, method: :get %></li>
             <% end %>
             <% if current_user.profile.present? %>
-              <li><%= link_to "#{current_user.profile.name}", profile_path(current_user.profile) %></li>
+              <li><%= link_to "#{current_user.profile.name}", profile_path(current_user.profile), method: :get %></li>
             <% end %>
             <% if unread_messages_count > 0 %>
-              <li><%= link_to "Inbox", inbox_path %><span class="badge"><%=unread_messages_count%></span></li>
+              <li><%= link_to "Inbox", inbox_path, method: :get %><span class="badge"><%=unread_messages_count%></span></li>
             <% else %>
-              <li><%= link_to "Inbox", inbox_path %></li>
+              <li><%= link_to "Inbox", inbox_path, method: :get %></li>
             <% end %>
-            <li><%= link_to 'Settings', edit_user_registration_path %></li>
+            <li><%= link_to 'Settings', edit_user_registration_path, method: :get %></li>
           <% else %>
-            <li><%= link_to 'Sign Up as Candidate', candidate_path %></li>
-            <li><%= link_to 'Sign Up as Company', company_path %></li>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up as Candidate', candidate_path, method: :get %></li>
+            <li><%= link_to 'Sign Up as Company', company_path, method: :get %></li>
+            <li><%= link_to 'Sign In', new_user_session_path, method: :get %></li>
           <% end %>
 				</ul>
 			</div>
