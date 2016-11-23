@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :experiences
   resources :profiles
   resources :jobs
   resources :transactions, only: [:create]

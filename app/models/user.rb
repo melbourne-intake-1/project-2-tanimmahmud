@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :jobs
+  has_many :experiences
   has_one :profile
   acts_as_messageable
 

@@ -32,6 +32,33 @@
 </p>
 
 <p>
+  <strong>Experiences:</strong>
+  <% @experiences.each_with_index do |experience, index| %>
+
+  <p>
+    <%= index + 1 %>.
+    <strong>Employer:</strong>
+    <%= experience.employer %>
+  </p>
+  <p>
+    <strong>Job Tytle:</strong>
+    <%= experience.job_title %>
+  </p>
+  <p>
+    <strong>Duration:</strong>
+    <%= experience.duration %>
+  </p>
+  <p>
+    <strong>Responsibilities:</strong>
+    <%= experience.responsibilities %>
+  </p>
+  <p><%= link_to 'Edit Experience', edit_experience_path(experience), method: :get %> |
+   <%= link_to 'Delete Experience', experience, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+  <p><%= link_to 'Add New Experience', new_experience_path, method: :get %></p>
+</p>
+
+<p>
   <strong>State:</strong>
   <%= @profile.state %>
 </p>
