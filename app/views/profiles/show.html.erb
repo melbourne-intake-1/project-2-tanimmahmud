@@ -89,6 +89,21 @@
   <p><%= link_to 'Add New School', new_school_path, method: :get %></p>
 </p>
 
+<p>
+  <strong>Skills:</strong>
+  <% @skills.each_with_index do |skill, index| %>
+
+  <p>
+    <%= index + 1 %>.
+    <strong><%= skill.name %></strong>
+  </p>
+
+  <p>
+   <%= link_to 'Delete Skill', skill, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+  <p><%= link_to 'Add New Skill', new_skill_path, method: :get %></p>
+</p>
+
 
 <p>
   <strong>State:</strong>

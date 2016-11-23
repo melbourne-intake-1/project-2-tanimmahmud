@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
   def show
     @experiences = @profile.user.experiences
     @schools = @profile.user.schools
+    @skills = @profile.user.skills
   end
 
   # GET /profiles/new

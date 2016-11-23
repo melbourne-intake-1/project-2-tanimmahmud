@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_one :profile
   has_many :experiences
   has_many :schools
+  has_many :skills
   acts_as_messageable
 
   def mailboxer_email(object)
