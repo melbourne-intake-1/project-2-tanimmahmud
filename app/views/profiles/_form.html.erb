@@ -36,7 +36,7 @@
 
   <div class="field">
     <%= f.label :address %>
-    <%= f.text_area :address %>
+    <%= f.text_area :address, id: 'address', name: 'address', onFocus: "geolocate()", placeholder: "Eg. 85 Droop Street, Footscray"%>
   </div>
 
   <div class="field">
