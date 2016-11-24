@@ -25,3 +25,9 @@
   </div>
   <%# render "devise/shared/links" %>
 </div>
+
+<% if @profile.user.role == 'company' %>
+
+<% elsif @profile.user.role == 'candidate' %>
+
+<% end %>

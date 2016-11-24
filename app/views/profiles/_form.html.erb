@@ -22,34 +22,51 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, placeholder: 'eg. John Doe', class: 'form-control', id: 'resume-name-group' %>
+          <% if current_user.role == 'company' %>
+          <%= f.label :name, 'Company Name' %>
+          <%= f.text_field :name, placeholder: 'eg. Coder Factory', class: 'form-control', id: 'resume-name-group' %>
+          <% elsif current_user.role == 'candidate' %>
+            <%= f.label :name %>
+            <%= f.text_field :name, placeholder: 'eg. John Doe', class: 'form-control', id: 'resume-name-group' %>
+          <% end %>
+
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="form-group">
-            <%= f.input :image, as: :file, class: 'form-control', id: 'resume-photo-group'  %>
+      <% if current_user.role == 'candidate' %>
+        <div class="col-sm-6">
+          <div class="form-group">
+              <%= f.input :image, as: :file, class: 'form-control', id: 'resume-photo-group'  %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group" >
-          <%= f.label :title %>
-          <%= f.text_field :title, placeholder: 'eg. Web Developer', class: 'form-control', id: 'resume-title-group' %>
+          <% if current_user.role == 'company' %>
+            <%= f.label :title, 'Tag line' %>
+            <%= f.text_field :title, class: 'form-control', id: 'resume-title-group' %>
+          <% elsif current_user.role == 'candidate' %>
+            <%= f.label :title %>
+            <%= f.text_field :title, placeholder: 'eg. Web Developer', class: 'form-control', id: 'resume-title-group' %>
+          <% end %>
         </div>
       </div>
+      <% if current_user.role == 'candidate' %>
       <div class="col-sm-6">
         <%= f.input :resume_file, as: :file, class: 'form-control', id: 'resume-photo-group'  %>
       </div>
+      <% end %>
     </div>
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group" >
           <%= f.label :address %>
-          <%= f.text_area :address, id: 'address',class: 'form-control', onFocus: "geolocate()"%>
+          <%= f.text_field :address, onFocus: "geolocate()", id: 'address',class: 'form-control'  %>
         </div>
       </div>
+    </div>
+    <div class="row">
       <div class="col-sm-6">
         <div class="form-group" >
           <%= f.label :phone %>
@@ -60,7 +77,11 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="form-group" id="resume-content-group">
-          <%= f.label :description %>
+          <% if current_user.role == 'company' %>
+            <%= f.label :description, 'Company Details' %>
+          <% elsif current_user.role == 'candidate' %>
+            <%= f.label :description, 'Resume Content' %>
+          <% end %>
           <%= f.text_area :description, id: 'resume-content',class: 'form-control'%>
         </div>
       </div>
