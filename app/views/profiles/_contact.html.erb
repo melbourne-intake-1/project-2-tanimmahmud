@@ -1,0 +1,11 @@
+<div class="sidebar-widget" id="widget-contact">
+  <h2>Contact</h2>
+  <ul>
+  	<li><i class="fa fa-user"></i><%= @profile.name %></li>
+  	<li><i class="fa fa-briefcase"></i><%= @profile.title %></li>
+  	<li><i class="fa fa-map-marker"></i><%= @profile.address %></li>
+  	<li><i class="fa fa-phone"></i><%= @profile.phone %></li>
+  	<li><i class="fa fa-envelope"></i><%= @profile.user.email %></li>
+    <li><a href="mailto:<%= @profile.user.email %>">Send an email</a></li>
+  </ul>
+</div>

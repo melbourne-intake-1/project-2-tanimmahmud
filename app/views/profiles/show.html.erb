@@ -1,141 +1,48 @@
-<p id="notice"><%= notice %></p>
+<!-- ============ TITLE START ============ -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
+  <section id="title">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1><%= @profile.name %></h1>
+          <h4><%= @profile.title %></h4>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>
-  <strong>Title:</strong>
-  <%= @profile.title %>
-</p>
+  <!-- ============ TITLE END ============ -->
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @profile.image_url() %>
-</p>
+  <!-- ============ CONTENT START ============ -->
 
-<p>
-  <strong>Description:</strong>
-  <%= @profile.description %>
-</p>
-
-<p>
-  <strong>Resume file:</strong>
-  <button><%= link_to "Download", @profile.resume_file_url,
-                  target: "_blank"%></button>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @profile.address %>
-</p>
-
-<p>
-  <strong>Experiences:</strong>
-  <% @experiences.each_with_index do |experience, index| %>
-
-  <p>
-    <%= index + 1 %>.
-    <strong>Employer:</strong>
-    <%= experience.employer %>
-  </p>
-  <p>
-    <strong>Job Tytle:</strong>
-    <%= experience.job_title %>
-  </p>
-  <p>
-    <strong>Duration:</strong>
-    <%= experience.duration %>
-  </p>
-  <p>
-    <strong>Responsibilities:</strong>
-    <%= experience.responsibilities %>
-  </p>
-  <p><%= link_to 'Edit Experience', edit_experience_path(experience), method: :get %> |
-   <%= link_to 'Delete Experience', experience, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
-  <p><%= link_to 'Add New Experience', new_experience_path, method: :get %></p>
-</p>
-
-<p>
-  <strong>Educations:</strong>
-  <% @schools.each_with_index do |school, index| %>
-
-  <p>
-    <%= index + 1 %>.
-    <strong>School Name:</strong>
-    <%= school.name %>
-  </p>
-  <p>
-    <strong>Qualification:</strong>
-    <%= school.qualification %>
-  </p>
-  <p>
-    <strong>Start Date:</strong>
-    <%= school.start %>
-  </p>
-  <p>
-    <strong>End Date:</strong>
-    <%= school.end %>
-  </p>
-  <p>
-    <strong>Notes:</strong>
-    <%= school.notes %>
-  </p>
-  <p><%= link_to 'Edit School', edit_school_path(school), method: :get %> |
-   <%= link_to 'Delete School', school, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
-  <p><%= link_to 'Add New School', new_school_path, method: :get %></p>
-</p>
-
-<p>
-  <strong>Skills:</strong>
-  <% @skills.each_with_index do |skill, index| %>
-
-  <p>
-    <%= index + 1 %>.
-    <strong><%= skill.name %></strong>
-  </p>
-
-  <p>
-   <%= link_to 'Delete Skill', skill, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
-  <p><%= link_to 'Add New Skill', new_skill_path, method: :get %></p>
-</p>
-
-<p>
-  <strong>Social Network:</strong>
-  <p>
-    <% @socials.each do |social| %>
-      <% if social.network == 'Github' %>
-      <!-- <i class="fa fa-github" aria-hidden="true"></i> -->
-        <%= link_to "https://github.com/#{social.username}", target: '_blank' do %>
-          <span><i class="fa fa-github fa-5x" aria-hidden="true"></i><span>
-        <% end %>
-      <% elsif social.network == 'Linkden' %>
-        <%= link_to "https://www.linkedin.com/in/#{social.username}", target: '_blank' do %>
-          <span><i class="fa fa-linkdin fa-5x" aria-hidden="true"></i><span>
-        <% end %>
-      <% elsif social.network == 'Twitter' %>
-        <%= link_to "https://twitter.com/#{social.username}", target: '_blank' do %>
-          <span><i class="fa fa-twitter fa-5x" aria-hidden="true"></i><span>
-        <% end %>
-      <% end %>
-      <p><%= link_to 'Delete social', social, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    <% end %>
-  </p>
-
- <p><%= link_to 'Add New social', new_social_path, method: :get %></p>
-</p>
-
-
-
-
-<p>
-  <strong>State:</strong>
-  <%= @profile.state %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path, method: :get %>
+	<section id="jobs">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8">
+					<article>
+						<h2>About Me</h2>
+            <%= image_tag @profile.image_url(:thumb), class: 'pull-left', alt: "#{@profile.name}'s photo'" %>
+						<p><%= @profile.description %></p>
+            <h3>Work Experience</h3>
+            <%= render 'profiles/work_experience' %>
+            <h3>Education</h3>
+            <%= render 'profiles/school' %>
+            <p>&nbsp;</p>
+            <p><%= link_to @profile.resume_file_url, class: 'btn btn-primary btn-lg',target: "_blank" do %>
+              <span><i class="fa fa-arrow-down" aria-hidden="true"></i> Download Resume<span>
+            <% end %></p>
+          </article>
+        </div>
+        <div class="col-sm-4" id="sidebar">
+          <%= render 'profiles/social_network' %>
+          <hr>
+          <%= render 'profiles/contact' %>
+          <hr>
+          <%= render 'profiles/skills' %>
+        </div>
+      </div>
+    </div>
+    <div>
+      <%= link_to 'Edit Profile', edit_profile_path(@profile), class: 'btn btn-danger pull-right', method: :get %>
+    </div>
+  </section>

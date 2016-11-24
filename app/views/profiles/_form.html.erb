@@ -18,7 +18,7 @@
     <% end %>
 
 <!-- Resume Details Start -->
-    
+
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
@@ -48,6 +48,12 @@
         <div class="form-group" >
           <%= f.label :address %>
           <%= f.text_area :address, id: 'address',class: 'form-control', onFocus: "geolocate()"%>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group" >
+          <%= f.label :phone %>
+          <%= f.text_field :phone, class: 'form-control'%>
         </div>
       </div>
     </div>

@@ -94,6 +94,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit( :name, :title, :image, :description, :resume_file, :address, :state)
+      params.require(:profile).permit( :name, :title, :image, :description, :resume_file, :address, :phone, :state)
     end
 end

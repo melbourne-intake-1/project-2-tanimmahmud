@@ -151,7 +151,7 @@ hr {
 		}
 
 	h4 {
-		color: #fff;
+		color: #5C6BC0;
 	}
 
 		h4 span {
@@ -780,11 +780,10 @@ header {
 
 	/* 4.4. SHARING LINKS
 	---------------------------------------------------------------*/
-
-	#share ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+	#widget-contact h2,
+	#skills h2,
+	#share h2 {
+		margin-left: 0;
 	}
 
 		#share ul li {
@@ -792,21 +791,6 @@ header {
 			margin-right: 10px;
 		}
 
-			#share ul li a {
-				background: #5C6BC0;
-				border-radius: 50%;
-				color: #fff;
-				display: block;
-				font-size: 18px;
-				height: 40px;
-				line-height: 40px;
-				text-align: center;
-				width: 40px;
-			}
-
-				#share ul li a:hover {
-					background: #0f858d;
-				}
 
 	/* 4.5. SIDEBAR
 	---------------------------------------------------------------*/
@@ -823,8 +807,13 @@ header {
 
 	.sidebar-widget {
 		display: table;
-		margin-bottom: 50px;
-		width: 100%;
+    margin-bottom: 50px;
+    width: 100%;
+	}
+
+	.sidebar-widget .btn.btn-default.btn-xs {
+		border: 1px solid #14b1bb;
+    color: #14b1bb;
 	}
 
 		.sidebar-widget ul {

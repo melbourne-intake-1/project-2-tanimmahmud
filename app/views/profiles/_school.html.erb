@@ -1,0 +1,30 @@
+<% @schools.each do |school| %>
+  <div class="row work-experience">
+    <div class="col-sm-2">
+      <div class="img-circle">
+        <i class="fa fa-graduation-cap"></i>
+      </div>
+    </div>
+    <div class="col-sm-10">
+      <h5><%=  school.name %> <h5>
+      <h4><%= school.qualification %></h4>
+      <h4><%= school.start %> - <%= school.end %></h4>
+      <p><%= school.notes %></p>
+      <% if user_signed_in? %>
+        <% if current_user == @profile.user %>
+        <p>
+          <%= link_to 'Edit School', edit_school_path(school), method: :get %> |
+           <%= link_to 'Delete School', school, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div class="pull-right">
+  <% if user_signed_in? %>
+    <% if current_user == @profile.user %>
+      <%= link_to ' + Add New School', new_school_path, method: :get, class: 'btn btn-default btn-xs' %>
+    <% end %>
+  <% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123050653) do
+ActiveRecord::Schema.define(version: 20161124041214) do
 
   create_table "experiences", force: :cascade do |t|
     t.integer  "user_id"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20161123050653) do
     t.string   "state"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "phone"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
