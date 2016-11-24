@@ -188,6 +188,10 @@ hr {
 		border: 0;
 	}
 
+	.btn-primary:hover {
+		color: #5C6BC0;
+	}
+
 	.btn-default {
 		border: 2px solid #E8EAF6;
 
@@ -880,7 +884,6 @@ header {
 	.jobs a,
 	.resumes a {
 		border-bottom: 1px solid #e7e7e7;
-		color: #888;
 		display: block;
 		padding: 15px 0;
 		position: relative;
@@ -967,6 +970,10 @@ header {
 		font-family: "FontAwesome";
 		font-weight: normal;
 		margin-right: 7px;
+	}
+
+	.badge {
+		background-color: #5C6BC0;
 	}
 
 	/* 5.1. MORE JOBS

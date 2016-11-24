@@ -19,3 +19,12 @@
     <% end %>
   </div>
 </div>
+
+<%= link_to box_path(box) do %> <div class='col-md-6 col-md-offset-3 col-xs-12 text-center '>
+ <div class='box-card'>
+   <h1><%= box.title %></h1>
+   <p><h3><%= box.description %><h3></p>
+   <hr>
+ </div>
+</div>
+<% end %>
