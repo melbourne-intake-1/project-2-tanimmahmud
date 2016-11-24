@@ -15,21 +15,16 @@
 
 <!-- Resume Details Start -->
   <div class="row">
-    <div class="col-sm-6">
-      <h2>Social Network</h2>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <div class="form-group">
         <%= f.label :network %>
-          <%= f.select :network, options_for_select(socials), class: 'selectpicker' %>
+          <%= f.select :network, options_for_select(socials),{}, class: 'form-control' %>
       </div>
     </div>
     <div class="col-sm-8 col-sm-offset-2">
       <div class="form-group">
         <%= f.label :username %>
-        <%= f.text_field :username, placeholder: 'tanimmahmud', class: 'form-control' %>
+        <%= f.text_field :username, placeholder: 'eg. tanimmahmud', class: 'form-control' %>
       </div>
     </div>
   </div>

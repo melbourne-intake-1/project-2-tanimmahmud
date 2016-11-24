@@ -13,8 +13,6 @@
 // = require jquery
 // = require jquery.turbolinks
 // = require jquery_ujs
-// = require chosen-jquery
-// = require jquery.image-select
 // = require mailbox
 // = require turbolinks
 // = require modernizr.custom.79639.js
@@ -35,6 +33,8 @@
 // = require fancybox.pack.js
 // = require magic.js
 // = require settings.js
+// = require chosen-jquery
+// = require jquery.image-select
 // = require_tree .
 
 // Auto Complete

@@ -1,6 +1,10 @@
-<h1>Editing Profile</h1>
-
+<div class="row">
+  <div class="col-sm-6">
+    <% if current_user.role == 'candidate' %>
+      <h2>Editing Resume Details</h2>
+    <% elsif current_user.role == 'company' %>
+      <h2>Editing Company Details</h2>
+    <% end %>
+  </div>
+</div>
 <%= render 'form', profile: @profile %>
-
-<%= link_to 'Show', @profile %> |
-<%= link_to 'Back', profiles_path %>
