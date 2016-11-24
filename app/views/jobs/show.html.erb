@@ -1,43 +1,62 @@
-<p id="notice"><%= notice %></p>
+<section id="title">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1> <%= @job.position %> Developer</h1>
+				<h4>
+					<span><i class="fa fa-map-marker"></i><%= @job.location %></span>
+					<span><i class="fa fa-clock-o"></i><%= @job.job_type %></span>
+				</h4>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="jobs">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-sm-8">
+  			<article>
+  				<h2>Job Details</h2>
+  				<p><%= @job.description %></p>
 
-
-<p>
-  <strong>Job type:</strong>
-  <%= @job.job_type %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @job.position %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @job.location %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @job.status %>
-</p>
-
-<p>
-  <strong>Day:</strong>
-  <%= @job.day %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  $<%= @job.day.to_i * 100 %>
-</p>
-
-<% if @job.payment.nil? %>
-  <%= link_to 'Pay to publish', jobs_path %>
-<% else %>
-  <%= link_to 'Job listing', jobs_path %>
-  <% end %>
+  					<%= link_to 'Apply Here', new_conversation_path(to: @job.user.id), class: 'btn btn-primary btn-lg', method: :get %>
+  			</article>
+        <div class="col-sm-8 col-sm-offset-2 pull-right">
+          <% if user_signed_in? && current_user == @job.user %>
+            <% if @job.payment.nil? %>
+              <%= link_to 'Pay to publish', jobs_path, class: 'btn btn-primary btn-xs', method: :get %>
+            <% else %>
+              <%= link_to 'Job listing', jobs_path, class: 'btn btn-primary btn-xs', method: :get %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sm-4" id="sidebar">
+				<div class="sidebar-widget" id="share">
+					<h2>Share this job</h2>
+					<ul>
+						<li><a href="https://www.facebook.com"><i class="fa fa-facebook fa-3x"></i></a></li>
+						<li><a href="https://twitter.com/home"><i class="fa fa-twitter fa-3x"></i></a></li>
+						<li><a href="https://plus.google.com/share"><i class="fa fa-google-plus fa-3x"></i></a></li>
+						<li><a href="https://www.linkedin.com"><i class="fa fa-linkedin fa-3x"></i></a></li>
+					</ul>
+				</div>
+				<hr>
+				<div class="sidebar-widget" id="company">
+					<h2>About this company</h2>
+					<p><%= truncate(@job.description, :length => 200) %></p>
+					<p><%= link_to 'Read More', profile_path(@job.user), class: 'btn btn-primary btn-md', method: :get %></p>
+				</div>
+				<hr>
+				<div class="sidebar-widget" id="company-jobs">
+					<h2>More jobs from this company</h2>
+					<ul>
+            <% @job.user.jobs.each do |job| %>
+              <li><h5><%= link_to "#{job.position} Developer", job_path(job), method: :get %></h5></li>
+            <% end %>
+					</ul>
+				</div>
+      </div>
+		</div>
+	</div>
+</section>

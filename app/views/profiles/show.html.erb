@@ -42,7 +42,9 @@
               <% end %></p>
             <% end %>
             <hr>
-            <div id="map-canvas"></div>
+            <% if @profile.user == 'company' %>
+                <div id="map-canvas"></div>
+            <% end %>
           </article>
         </div>
         <div class="col-sm-4" id="sidebar">

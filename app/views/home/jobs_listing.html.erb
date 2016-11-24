@@ -1,6 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<h1> Recent Jobs</h1>
+<section id="title">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1>Recent Jobs</h1>
+        <h4>Find your perfect match</h4>
+      </div>
+    </div>
+  </div>
+</section>
 
 <%= form_tag jobs_listing_path, :method => 'get' do %>
     <%= text_field_tag :search, params[:search] %>

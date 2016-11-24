@@ -10,8 +10,7 @@
 				<ul class="nav">
           <li><%= link_to 'Home', root_path, method: :get %></li>
           <li><%= link_to 'Jobs', jobs_listing_path, method: :get %></li>
-          <li><%= link_to 'Candidate Listing', candidates_path, method: :get %></li>
-          <li><%= link_to 'Company Listing', companies_path, method: :get %></li>
+          <li><%= link_to 'Candidates', candidates_path, method: :get %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'Post a Job', new_job_path, method: :get %></li>
             <% if current_user.role == 'company' %>
