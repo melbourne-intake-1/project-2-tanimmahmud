@@ -1,18 +1,16 @@
 <% @receipts.each do |receipt| %>
     <% message = receipt.message %>
-    <div class="media">
+    <div class="media pull-right">
       <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://placehold.it/64x64" alt="...">
-        </a>
+        <%= message.sender.profile.image_url(:thumb) %>
       </div>
       <div class="media-body">
         <h4 class="media-heading">
-          <%= message.sender.email %> <br>
+          <%= message.sender.profile.name %> <br>
           <small><b>Subject: </b><%= message.subject %></small><br>
-          <small><b>Date: </b><%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
+          <small><b>Date: </b><%=  time_ago_in_words(message.created_at) %></small>
         </h4>
-        <%= message.body %>
+        <p><%= message.body %></p>
       </div>
     </div>
 <% end %>

@@ -1,13 +1,13 @@
 <ul class="nav nav-pills nav-stacked">
   <li class="<%= active_page(:inbox) %>">
-    <%= link_to inbox_path do  %>
+    <%= link_to inbox_path, method: :get do  %>
         <span class="label label-danger pull-right"><%=unread_messages_count%></span>
         <em class="fa fa-inbox fa-lg"></em>
         <span>Inbox</span>
     <% end %>
   </li>
   <li class="<%= active_page(:sent) %>">
-    <%= link_to sent_path do %>
+    <%= link_to sent_path, method: :get do %>
 
         <em class="fa fa-paper-plane-o fa-lg"></em>
         <span>Sent</span>
@@ -15,7 +15,7 @@
   </li>
 
   <li class="<%= active_page(:trash) %>">
-    <%= link_to trash_path do %>
+    <%= link_to trash_path, method: :get do %>
         <em class="fa fa-trash-o fa-lg"></em>
         <span>Trash</span>
     <% end %>

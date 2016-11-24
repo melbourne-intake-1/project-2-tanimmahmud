@@ -12,9 +12,9 @@ module JobsHelper
 
   def positions
     [
-      ['Full Stack'],
-      ['Front End'],
-      ['Back End'],
+      ['Full Stack Developer'],
+      ['Front End Developer'],
+      ['Back End Developer'],
       ['UX/UI'],
       ['Web Designer']
     ]
