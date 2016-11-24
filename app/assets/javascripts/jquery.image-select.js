@@ -1,11 +1,3 @@
-Image Select, an extention to the Chosen, a Select Box Enhancer for jQuery and Prototype
-by Adnan Sagar, WebSemantics Inc. http://websemantics.ca & AlterSpark Corp. http://www.alterspark.com/
-
-Version 1.0.2
-Full source at https://github.com/harvesthq/chosen
-Copyright (c) 2014 WebSemantics http://websemantics.ca
-
-MIT License, https://github.com/websemantics/Image-Select/blob/master/LICENSE
 
 (function($) {
 
