@@ -13,9 +13,13 @@
 <div class="row">
   <div class="col-xs-6 col-xs-offset-1">
     <h2>Find a Candidate</h2>
-  	<div class="form-group" id="job-search-group">
-  		<label for="job-search" class="sr-only">Search</label>
-  		<input type="text" class="form-control" id="job-search" placeholder="Type and press enter">
+  	<div class="form-group col-xs-8 col-xs-offset-1" id="job-search-group">
+      <%= form_tag jobs_listing_path, :method => 'get' do %>
+          <p><%= text_field_tag :search, params[:search], id: 'job-search-group', class: 'form-control' %></p>
+          <%= submit_tag "Search", class: 'btn btn-primary btn-lg' %>
+      <% end %>
+      <p><%= link_to "Advanced Search", new_search_path, method: :get %></p>
+
   	</div>
   </div>
 </div>
@@ -41,7 +45,7 @@
   									<div class="hidden-xs col-sm-6 col-md-5 col-lg-4 candidate-location">
   										<p><strong><%= c.profile.address %></strong></p>
   									</div>
-  									<div class="">
+  									<div>
   										<p class="candidate-tags">
                         <% c.skills.each do |skill| %>
                           <span class="badge"><%= skill.name %></span>
