@@ -7,6 +7,8 @@ class HomeController < ApplicationController
       # If user has just signed up, make them fill out their profile
       redirect_to new_profile_url if @profile.nil?
     end
+    @jobs = Job.search(params[:search]).where('status': 'approved').order('created_at DESC')
+    @candidates = User.joins(:profile).where('role': 'candidate').order('created_at DESC')
   end
 
   def candidates
@@ -14,7 +16,7 @@ class HomeController < ApplicationController
   end
 
   def jobs_listing
-    @jobs = Job.search(params[:search]).where('status': 'approved')
+    @jobs = Job.search(params[:search]).where('status': 'approved').order('created_at DESC')
   end
 
 end

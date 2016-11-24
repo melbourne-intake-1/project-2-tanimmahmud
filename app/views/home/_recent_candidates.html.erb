@@ -1,26 +1,39 @@
-<div class="resumes">
-
-  <!-- Candidate 1 -->
-  <a href="#" class="featured">
-    <div class="row">
-      <div class="col-xs-3 col-sm-2 col-lg-1">
-        <img src="images/job1.jpg" alt="" class="img-circle img-responsive" />
-      </div>
-      <div class="col-xs-9 col-sm-4 col-md-5 col-lg-4 candidate-name">
-        <h5>Susie Johnson</h5>
-        <p><strong>Project Manager</strong></p>
-      </div>
-      <div class="hidden-xs col-sm-6 col-md-5 col-lg-4 candidate-location">
-        <p><strong>New York City, NY, USA</strong></p>
-        <p>743.6 mi away</p>
-      </div>
-      <div class="hidden-xs hidden-sm hidden-md col-lg-3">
-        <p class="candidate-date">Updated 3 weeks ago</p>
-        <p class="candidate-tags">
-          <span class="badge">Marketing</span>
-          <span class="badge">Sale</span>
-        </p>
+<section id="jobs">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<div class="jobs">
+            <% @candidates.each do |c| %>
+              <%= link_to  profile_path(c.profile), method: :get do %>
+                <div class="feature">
+                  <div class="row">
+  									<div class="col-xs-3 col-sm-2 col-lg-1">
+                      <%= image_tag c.profile.image_url(:thumb), class: 'img-circle img-responsive', alt: "#{c.profile.name}'s photo'" %>
+  									</div>
+  									<div class="col-xs-9 col-sm-4 col-md-5 col-lg-4 candidate-name">
+  										<h5><%= c.profile.name %></h5>
+  										<p><strong><%= c.profile.title %></strong></p>
+                      <p class="candidate-date"> Updated <%=time_ago_in_words(c.profile.updated_at)%> ago</p>
+  									</div>
+  									<div class="hidden-xs col-sm-6 col-md-5 col-lg-4 candidate-location">
+  										<p><strong><%= c.profile.address %></strong></p>
+  									</div>
+  									<div>
+  										<p class="candidate-tags">
+                        <% c.skills.each do |skill| %>
+                          <span class="badge"><%= skill.name %></span>
+                        <% end %>
+  										</p>
+  									</div>
+  								</div>
+                </div>
+              <% end %>
+              <% unless current_user == c %>
+                <%= link_to 'Send message', new_conversation_path(to: c.id), class: 'btn btn-primary btn-xs', method: :get %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </a>
-</div>
+  </section>

@@ -14,39 +14,36 @@
       <!-- Tab panes -->
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="recent-jobs-tab">
-
 					<section id="jobs">
 						<div class="container">
 							<div class="row">
+
 								<div class="col-sm-8">
-									<h2>Recent Jobs</h2>
+
 
                   <%= render 'home/recent_jobs' %>
-
-                  <a class="btn btn-primary" id="more-jobs">
-										<span class="more">Show More Jobs <i class="fa fa-arrow-down"></i></span>
-										<span class="less">Show Less Jobs <i class="fa fa-arrow-up"></i></span>
-									</a>
 
 								</div>
                 <div class="col-sm-4">
 									<h2>Featured Jobs</h2>
-									<a href="#">
-										<img src="images/featured-job.jpg" alt="Featured Job" class="img-responsive" />
 										<div class="featured-job">
-											<img src="images/job1.jpg" alt="" class="img-circle" />
-											<div class="title">
-												<h5>Web Designer</h5>
-												<p>Amazon</p>
+											<div class="text-center">
+												<h5><%= @jobs.first.position %></h5>
+												<p><%= @jobs.first.user.profile.name %></p>
 											</div>
 											<div class="data">
-												<span class="city"><i class="fa fa-map-marker"></i>New York City</span>
-												<span class="type full-time"><i class="fa fa-clock-o"></i>Full Time</span>
-												<span class="sallary"><i class="fa fa-dollar"></i>45,000</span>
+												<span class="city"><i class="fa fa-map-marker"></i><%= @jobs.first.location %></span>
+												<span class="type full-time"><i class="fa fa-clock-o"></i><%= @jobs.first.job_type %></span>
 											</div>
-											<div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique euismod lorem, a consequat orci consequat a. Donec ullamcorper tincidunt nunc, ut aliquam est pellentesque porta. In neque erat, malesuada sit amet orci ac, laoreet laoreet mauris.</div>
+											<div class="description">
+                        <p>
+											    <%= truncate(@jobs.first.description, :length => 200) %>
+											  </p>
+                      </div>
 											<div class="text-center">
-												<div style="margin-top: 20px" class="btn btn-sm btn-primary">Apply for this Job</div>
+                        <p>
+                          <%= link_to 'Read More', job_path(@jobs.first), class: 'btn btn-primary btn-md', method: :get %>
+                        </p>
 											</div>
 										</div>
 									</a>
@@ -57,28 +54,7 @@
 
 				</div>
         <div role="tabpanel" class="tab-pane" id="recent-resumes-tab">
-
-          <!-- ============ JOBS END ============ -->
-
-          <!-- ============ CANDIDATES START ============ -->
-
-
-        <section id="resumes">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12" >
-                <h2>Candidates</h2>
-
-                <%= render 'home/recent_candidates' %>
-
-                <a class="btn btn-primary" id="more-resumes">
-                  <span class="more">Show More Resumes <i class="fa fa-arrow-down"></i></span>
-                  <span class="less">Show Less Resumes <i class="fa fa-arrow-up"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+          <%= render 'home/recent_candidates' %>
       </div>
     </div>
   </div>
@@ -98,32 +74,32 @@
 				<div class="row pricing">
 					<div class="col-sm-4">
 						<ul>
-							<li class="title">Free</li>
+							<li class="title">Dev Talent</li>
 							<li class="price">$0</li>
-							<li>1 job posting</li>
-							<li>No featured jobs</li>
-							<li>Displayed for 5 days</li>
-							<li><a href="post-a-job.html" class="btn btn-primary">Choose</a></li>
+							<li>Profile</li>
+							<li>Unlimited Job Apply</li>
+							<li>Get an instant reply from employer</li>
+							<li><%= link_to 'Sign Up', candidate_path,class: 'btn btn-primary', method: :get %></li>
 						</ul>
 					</div>
 					<div class="col-sm-4">
 						<ul class="popular">
-							<li class="title">Startup</li>
-							<li class="price">$19</li>
-							<li>1 job posting</li>
+							<li class="title">Dev Company</li>
+							<li class="price">$0</li>
+							<li>1 job posting $100</li>
 							<li>No featured jobs</li>
-							<li>Displayed for 30 days</li>
-							<li><a href="post-a-job.html" class="btn btn-primary">Choose</a></li>
+							<li>Displayed for 1 day</li>
+							<li><%= link_to 'Sign Up', company_path,class: 'btn btn-primary', method: :get %></li>
 						</ul>
 					</div>
 					<div class="col-sm-4">
 						<ul>
 							<li class="title">Enterprise</li>
-							<li class="price">$39</li>
-							<li>5 job postings</li>
+							<li class="price">$0</li>
+							<li>5 job postiong $300</li>
 							<li>3 featured jobs</li>
-							<li>Displayed for 90 days</li>
-							<li><a href="post-a-job.html" class="btn btn-primary">Choose</a></li>
+							<li>Displayed for 10 days</li>
+							<li><%= link_to 'Sign Up', company_path,class: 'btn btn-primary', method: :get %></li>
 						</ul>
 					</div>
 				</div>

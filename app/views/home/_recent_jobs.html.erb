@@ -1,24 +1,22 @@
+
 <div class="jobs">
-
-
-  <a href="#" class="featured applied">
-  	<div class="row">
-  		<div class="col-md-1 hidden-sm hidden-xs">
-  			<img src="images/logo-amazon.jpg" alt="" class="img-responsive" />
-  		</div>
-  		<div class="col-lg-5 col-md-5 col-sm-7 col-xs-12 job-title">
-  			<h5>Web Designer</h5>
-  			<p><strong>Amazon Inc.</strong> Company slogan goes here</p>
-  		</div>
-  		<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 job-location">
-  			<p><strong>New York City, NY, USA</strong></p>
-  			<p class="hidden-xs">126.3 miles away</p>
-  		</div>
-  		<div class="col-lg-2 col-md-2 hidden-sm hidden-xs job-type text-center">
-  			<p class="job-salary"><strong>$128,000</strong></p>
-  			<p class="badge full-time">Full time</p>
-  		</div>
-  	</div>
-  </a>
-
+  <% @jobs.each do |job| %>
+    <%= link_to  job_path(job), method: :get do %>
+      <div class="feature">
+        <div class="row">
+          <div class="col-xs-9 col-sm-4 col-md-5 col-lg-4 candidate-name">
+            <h5><%= job.position %></h5>
+            <p><strong><%= job.user.profile.name %></strong></p>
+            <p class="candidate-date"> Created <%=time_ago_in_words(job.payment.created_at)%> ago</p>
+          </div>
+          <div class="hidden-xs col-sm-6 col-md-5 col-lg-4 candidate-location">
+            <p><strong><%= job.user.profile.address %></strong></p>
+          </div>
+          <div class="hidden-xs col-sm-6 col-md-5 col-lg-4">
+            <p><strong><%= job.job_type %></strong></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
