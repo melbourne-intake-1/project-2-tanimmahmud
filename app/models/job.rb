@@ -2,12 +2,12 @@ class Job < ApplicationRecord
   belongs_to :user
   has_one :payment
 
-  validates: job_type, presence: true
-  validates: description, length: { minimum: 250}
-  validates: position, presence: true
-  validates: location, presence: true
-  validates: status, presence: true
-  validates: day, presence: true
+  validates :job_type, presence: true
+  validates :description, length: { minimum: 250}
+  validates :position, presence: true
+  validates :location, presence: true
+  validates :status, presence: true
+  validates :day, presence: true
 
 
   def self.search(search)
