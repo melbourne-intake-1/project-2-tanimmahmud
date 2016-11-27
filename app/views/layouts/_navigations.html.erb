@@ -27,8 +27,7 @@
             <li><%= link_to 'Settings', edit_user_registration_path, method: :get %></li>
 						<li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li><%= link_to 'Sign Up as Candidate', candidate_path, method: :get %></li>
-						<li><%= link_to 'Sign Up as Company', company_path, method: :get %></li>
+            <li><%= link_to 'Sign Up', sign_up_path, method: :get %></li>
             <li><%= link_to 'Sign In', new_user_session_path, method: :get %></li>
           <% end %>
 				</ul>

@@ -21,8 +21,7 @@ Rails.application.routes.draw do
     end
   end
   devise_scope :user do
-    get "candidate" => "devise/registrations#new", :role => 'candidate'
-    get "company" => "devise/registrations#new", :role => 'company'
+    get "sign_up" => "devise/registrations#new"
   end
   devise_for :users, controllers: { registrations: "registrations"}
   root 'home#index'
