@@ -38,6 +38,13 @@
               <%= f.input :image, as: :file, class: 'form-control', id: 'resume-photo-group'  %>
           </div>
         </div>
+      <% elsif current_user.role == 'company' %>
+      <div class="col-sm-6">
+        <div class="form-group">
+            <%= f.label :image, 'Company logo' %>
+            <%= f.input :image , as: :file, class: 'form-control', id: 'resume-photo-group'   %>
+        </div>
+      </div>
       <% end %>
     </div>
     <div class="row">

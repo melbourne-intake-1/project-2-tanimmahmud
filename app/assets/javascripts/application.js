@@ -35,6 +35,7 @@
 // = require settings.js
 // = require chosen-jquery
 // = require jquery.image-select
+//= require bootstrap-datepicker
 // = require_tree .
 
 // Auto Complete

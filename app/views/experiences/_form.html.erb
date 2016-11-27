@@ -3,21 +3,18 @@
   <%= simple_form_for(@experience) do |f| %>
     <% if @experience.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+        <div  class="alert alert-danger">
+          <h3><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h3>
 
-        <ul>
-        <% @experience.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+          <ul>
+          <% @experience.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       </div>
     <% end %>
 
-    <div class="row">
-      <div class="col-sm-6">
-        <h2>Experience details</h2>
-      </div>
-    </div>
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
         <div class="form-group">
@@ -40,7 +37,7 @@
       <div class="col-sm-8 col-sm-offset-2">
         <div class="form-group">
           <%= f.label :responsibilities %>
-          <%= f.text_area :responsibilities, placeholder: '(Optional)', class: 'form-control' %>
+          <%= f.text_area :responsibilities, class: 'form-control' %>
         </div>
       </div>
     </div>

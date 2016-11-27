@@ -5,5 +5,4 @@ class School < ApplicationRecord
   validates :qualification, presence: true
   validates :start, presence: true
   validates :end, presence: true
-  validates :notes, presence: true
 end
