@@ -20,13 +20,13 @@ class ProfilesController < ApplicationController
   def new
     if user_signed_in?
       if current_user.profile.present?
-        flash[:notice] = 'You already have a profile'
+        flash[:danger] = 'You already have a profile'
         redirect_to root_path
       else
         @profile = Profile.new
       end
     else
-      flash[:notice] = 'You are not signed in'
+      flash[:danger] = 'You are not signed in'
       redirect_to root_path
     end
   end
@@ -34,7 +34,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1/edit
   def edit
     if current_user != @profile.user
-      flash[:notice] = 'You do not have permission to edit this !'
+      flash[:danger] = 'You do not have permission to edit this !'
       redirect_to root_path
     end
   end
@@ -47,7 +47,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.html { redirect_to @profile, success: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -61,7 +61,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+        format.html { redirect_to @profile, success: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit }
@@ -76,11 +76,11 @@ class ProfilesController < ApplicationController
      if current_user == @profile.user
        @profile.destroy
        respond_to do |format|
-         format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
+         format.html { redirect_to profiles_url, success: 'Profile was successfully destroyed.' }
          format.json { head :no_content }
        end
      else
-       flash[:notice] = 'You can not delete profile'
+       flash[:danger] = 'You can not delete profile'
        redirect_to root_path
      end
 
@@ -94,6 +94,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit( :name, :title, :image, :description, :resume_file, :address, :phone, :state)
+      params.require(:profile).permit( :name, :title, :image, :description, :resume_file, :address, :phone, :website)
     end
 end

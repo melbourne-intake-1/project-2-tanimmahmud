@@ -5,9 +5,11 @@ class Profile < ApplicationRecord
   validates :title, presence: true
   validates :image, presence: true
   validates :address, presence: true
+  validates :phone, presence: true
+  validates :website, presence: true
   validates :description, length: { minimum: 250 }
   validate :size_validation, :if => "image?" || "resume_file?"
-  
+
 
 
 

@@ -3,6 +3,9 @@
   <ul>
   	<li><i class="fa fa-user"></i><%= @profile.name %></li>
   	<li><i class="fa fa-briefcase"></i><%= @profile.title %></li>
+    <%= link_to "http://#{@profile.website}", target: '_blank' do %>
+      <li><i class="fa fa-globe"></i><%= @profile.website %></li>
+    <% end %>
   	<li><i class="fa fa-map-marker"></i><p id='address'><%= @profile.address %></p></li>
   	<li><i class="fa fa-phone"></i><%= @profile.phone %></li>
   	<li><i class="fa fa-envelope"></i><%= @profile.user.email %></li>

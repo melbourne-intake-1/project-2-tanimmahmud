@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124041214) do
+ActiveRecord::Schema.define(version: 20161128005827) do
 
   create_table "experiences", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "employer"
     t.string   "job_title"
-    t.string   "duration"
     t.string   "responsibilities"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "from"
+    t.string   "to"
     t.index ["user_id"], name: "index_experiences_on_user_id"
   end
 
@@ -105,10 +106,10 @@ ActiveRecord::Schema.define(version: 20161124041214) do
     t.string   "description"
     t.string   "resume_file"
     t.text     "address"
-    t.string   "state"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "phone"
+    t.string   "website"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
