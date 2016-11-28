@@ -34,7 +34,9 @@
             <% end %>
 
             <div class="col-sm-12">
-              <%= image_tag @profile.image_url(:thumb), class: 'pull-left', alt: "#{@profile.name}'s photo'" %>
+
+              <%= image_tag @profile.image_url(), class: 'pull-left profile-image', alt: "#{@profile.name}'s photo'" %>
+
   						<p><%= @profile.description %></p>
             </div>
 
