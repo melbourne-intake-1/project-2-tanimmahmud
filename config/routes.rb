@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'contact', to: 'contact#index'
+  post '/', to: 'contact#mail'
+
   resources :socials
   resources :skills
   resources :schools

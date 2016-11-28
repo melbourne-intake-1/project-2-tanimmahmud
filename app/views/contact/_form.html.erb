@@ -1,0 +1,36 @@
+
+  <section id="contact" class="color2">
+    <div class="container">
+      <%= simple_form_for( :contact) do |f| %>
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>Drop us a line</h2>
+            <div class="form-group" id="contact-name-group" >
+              <%= f.label :name %>
+              <%= f.text_field :name, placeholder: 'type your name here', class: 'form-control', id: 'contact-name' %>
+            </div>
+            <div class="form-group" id="contact-email-group">
+              <%= f.label :email %>
+              <%= f.text_field :email, placeholder: 'type your email here', class: 'form-control', id: 'contact-email' %>
+            </div>
+            <div class="form-group" id="contact-subject-group">
+              <%= f.label :subject %>
+              <%= f.text_field :subject, placeholder: 'subject', class: 'form-control', id: 'contact-subjct' %>
+            </div>
+            <div class="form-group" id="contact-message-group">
+              <%= f.label :message %>
+              <%= f.text_area :message, placeholder: 'type here ... ', class: 'form-control', id: 'contact-message',rows: 4 %>
+            </div>
+            <div class="row">
+              <div class="actions pull-right">
+                <%= f.submit 'Submit', class: 'btn btn-default' %>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <h2>Visit our office</h2>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </section>
