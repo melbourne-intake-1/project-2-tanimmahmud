@@ -109,7 +109,6 @@ ActiveRecord::Schema.define(version: 20161128072726) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "phone"
-    t.string   "website"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
