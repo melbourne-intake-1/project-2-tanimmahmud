@@ -4,7 +4,7 @@ class Search < ApplicationRecord
 
     jobs = Job.all
 
-    jobs = jobs.where(["job_type LIKE?", "%#{keywords}%"]) if keywords.present?
+    jobs = jobs.where(["job_type LIKE?", "%#{job_type}%"]) if job_type.present?
     jobs = jobs.where(["position LIKE?", "%#{position}%"]) if position.present?
     jobs = jobs.where(["location LIKE?", "%#{location}%"]) if location.present?
 

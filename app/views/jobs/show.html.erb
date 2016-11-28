@@ -52,7 +52,7 @@
 					<h2>More jobs from this company</h2>
 					<ul>
             <% @job.user.jobs.each do |job| %>
-              <li><h5><%= link_to "#{job.position} Developer", job_path(job), method: :get %></h5></li>
+              <li><h5><%= link_to "#{job.position}", job_path(job), method: :get %></h5></li>
             <% end %>
 					</ul>
 				</div>

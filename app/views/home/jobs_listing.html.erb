@@ -12,10 +12,10 @@
 <form>
 <div class="row">
   <div class="col-xs-6 col-xs-offset-1">
-    <h2>Find a Candidate</h2>
+    <h2>Find a Job</h2>
     <div class="form-group col-xs-8 col-xs-offset-1" id="job-search-group">
       <%= form_tag jobs_listing_path, :method => 'get' do %>
-          <p><%= text_field_tag :search, params[:search], id: 'job-search-group', class: 'form-control' %></p>
+          <p><%= text_field_tag :search, params[:search], id: 'job-search-group', class: 'form-control', placeholder: 'eg. Full Stack' %></p>
           <%= submit_tag "Search", class: 'btn btn-primary btn-lg' %>
       <% end %>
       <p><%= link_to "Advanced Search", new_search_path, method: :get %></p>

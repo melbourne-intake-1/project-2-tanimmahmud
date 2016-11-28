@@ -12,7 +12,7 @@ class Job < ApplicationRecord
 
   def self.search(search)
     if search
-      @jobs = Job.where(["job_type LIKE? ","%#{search}%"])
+      @jobs = Job.where(["position LIKE? ","%#{search}%"])
     else
       all
     end

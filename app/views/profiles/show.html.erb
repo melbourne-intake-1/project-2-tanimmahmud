@@ -54,10 +54,15 @@
                   <span><i class="fa fa-arrow-down" aria-hidden="true"></i> Download Resume<span>
                 <% end %></p>
               </div>
-            <% end %>
-            <% if @profile.user == 'company' %>
-                <hr>
-                <div id="map-canvas"></div>
+            <% elsif @profile.user.role == 'company' && @profile.user.jobs.present? %>
+              <div class="col-sm-12">
+                <h2>Jobs from this company</h2>
+                <ul class="list-unstyled">
+                  <% @profile.user.jobs.each do |job| %>
+                    <li><h5><%= link_to "#{job.position}", job_path(job), method: :get %></h5></li>
+                  <% end %>
+                </ul>
+              </div>
             <% end %>
           </article>
         </div>
