@@ -21,8 +21,6 @@ Rails.application.routes.draw do
       post :reply
       post :trash
       post :untrash
-      post :restore
-      post :mark_as_read
     end
   end
   devise_scope :user do
