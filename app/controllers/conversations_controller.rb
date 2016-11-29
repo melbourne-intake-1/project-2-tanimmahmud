@@ -14,7 +14,7 @@ class ConversationsController < ApplicationController
       recipients = User.where(id: conversation_params[:recipients])
       conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
       flash[:notice] = "Your message was successfully sent!"
-      redirect_to inbox_path
+      redirect_to root_path
     end
 
     def show
@@ -27,17 +27,17 @@ class ConversationsController < ApplicationController
     def reply
       current_user.reply_to_conversation(conversation, message_params[:body])
       flash[:notice] = "Your reply message was successfully sent!"
-      redirect_to inbox_path
+      redirect_to root_path
     end
 
     def trash
       conversation.move_to_trash(current_user)
-      redirect_to inbox_path
+      redirect_to root_path
     end
 
     def untrash
       conversation.untrash(current_user)
-      redirect_to inbox_path
+      redirect_to root_path
     end
 
 
