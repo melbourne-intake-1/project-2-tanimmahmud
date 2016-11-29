@@ -2,6 +2,10 @@ class ConversationsController < ApplicationController
 
   before_action :authenticate_user!
 
+    def index
+
+    end
+
     def new
       @chosen_recipient = User.find_by(id: params[:to].to_i) if params[:to]
     end
