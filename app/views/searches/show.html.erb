@@ -20,7 +20,7 @@
                     <p class="candidate-date"> Created <%=time_ago_in_words(job.payment.created_at)%> ago</p>
                   </div>
                   <div class="hidden-xs col-sm-6 col-md-5 col-lg-4 candidate-location">
-                    <p><strong><%= job.user.profile.address %></strong></p>
+                    <p><strong><%= job.location %></strong></p>
                   </div>
                   <div class="hidden-xs col-sm-6 col-md-5 col-lg-4">
                     <p><strong><%= job.job_type %></strong></p>

@@ -14,6 +14,7 @@ class HomeController < ApplicationController
 
   def candidates
     @candidates = User.joins(:profile).where('role': 'candidate').order('created_at DESC').paginate(page: params[:page], per_page: 30)
+    @candidates = @candidates.where(["title LIKE?", "%#{params[:search]}%"])
   end
 
   def jobs_listing
