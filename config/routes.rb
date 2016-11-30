@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :jobs
   resources :transactions, only: [:create]
   resources :searches
+  resources :user_searches
   # mailbox folder routes
   get "inbox" => "mailbox#inbox", as: 'inbox'
   get "sent" => "mailbox#sent", as: 'sent'

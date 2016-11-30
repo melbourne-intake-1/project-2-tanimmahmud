@@ -1,0 +1,47 @@
+<h2>Search Result</h2>
+
+<% if @user_search.search_users.empty? %>
+
+  <div class="alert alert-danger text-center" role="alert">No Record Found</div>
+
+<% else %>
+<section id="jobs">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+				<div class="jobs">
+          <% @user_search.search_users.each do |c| %>
+            <%= link_to  profile_path(c), method: :get do %>
+            <div class="feature">
+              <div class="row">
+                <div class="col-xs-3 col-sm-2 col-lg-1">
+                  <%= image_tag c.image_url(), class: 'img-responsive', alt: "#{c.name}'s photo'" %>
+                </div>
+                <div class="col-xs-9 col-sm-4 col-md-5 col-lg-4 candidate-name">
+                  <h5><%= c.name %></h5>
+                  <p><strong><%= c.title %></strong></p>
+                  <p class="candidate-date"> Updated <%=time_ago_in_words(c.updated_at)%> ago</p>
+                </div>
+                <div class="hidden-xs col-sm-6 col-md-5 col-lg-4 candidate-location">
+                  <p><strong><%= c.address %></strong></p>
+                </div>
+                <div>
+                  <p class="candidate-tags">
+                    <% c.user.skills.each do |skill| %>
+                      <span class="badge"><%= skill.name %></span>
+                    <% end %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <% unless current_user == c.user %>
+            <%= link_to 'Send message', new_conversation_path(to: c.user.id), class: 'btn btn-primary btn-xs', method: :get %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+</section>
