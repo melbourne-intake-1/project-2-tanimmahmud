@@ -114,8 +114,8 @@ hr {
 
 .fa-navicon:before, .fa-reorder:before, .fa-bars:before {
     content: "\f0c9";
-    position: absolute;
-    top: 50%;
+    position: relative;
+		padding: 20px;
 }
 
 
@@ -288,7 +288,7 @@ hr {
     padding-top: 5%;
     font-weight: bold;
     font-size: 20px;
-}
+	}
 
 
 /* 2. HEADER
@@ -1132,6 +1132,11 @@ footer span {
 	---------------------------------------------------------------*/
 	@media (max-width: 767px) {
 
+		.nav-tabs {
+	    padding-left: 25%;
+	    font-size: 16px;
+		}
+
 		section {
 			padding: 40px 0;
 		}
@@ -1220,6 +1225,15 @@ footer span {
 
 		#home header {
 			background: #5C6BC0;
+		}
+
+		.user-details {
+			display: none;
+		}
+
+		.nav-tabs {
+	    padding-left: 9%;
+	    font-size: 14px;
 		}
 
 		.slide-content {

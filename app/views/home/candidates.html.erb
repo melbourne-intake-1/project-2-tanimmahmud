@@ -11,8 +11,8 @@
 <div class="sidebar-widget" id="jobsearch">
 <form>
 <div class="row">
-  <div class="col-xs-6 col-xs-offset-1">
-    <h2>Find a Candidate</h2>
+  <div class="col-md-6 col-xs-10 col-xs-offset-1">
+    <h2>Search a Candidate</h2>
   	<div class="form-group col-xs-8 col-xs-offset-1" id="job-search-group">
       <%= form_tag jobs_listing_path, :method => 'get' do %>
           <p><%= text_field_tag :search, params[:search], id: 'job-search-group', class: 'form-control', placeholder: 'eg. Front End' %></p>

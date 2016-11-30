@@ -2,27 +2,28 @@
 
   <header>
     <div id="header-background"></div>
-    <div class="container">
-      <div class="pull-left">
-        <div id="logo"><%= link_to image_tag('http://res.cloudinary.com/dn40jh1kc/image/upload/v1480006586/jrdev_st8ow2.png'), root_path, alt: 'Junior Dev jobs', method: :get%></div>
-      </div>
-      <div id="menu-open" class="pull-right">
-        <a class="fm-button"><i class="fa fa-bars fa-lg"></i></a>
-      </div>
-      <% if user_signed_in? %>
-        <% if current_user.profile.present? %>
-        <%= link_to profile_path(current_user), method: :get do %>
-          <ul class="list-unstyled list-inline pull-right">
-              <li><%= image_tag current_user.profile.image_url(:thumb), class:'img-thumbnile head-image', alt: "#{current_user.profile.name}'s photo'" %></li>
-              <li><h6><%= current_user.profile.name %></h6></li>
-          </ul>
-            <% end %>
-        <% else %>
-        <div class="pull-right">
-          <%= current_user.email %>
+      <div class="container">
+        <div class="pull-left">
+          <div id="logo"><%= link_to image_tag('http://res.cloudinary.com/dn40jh1kc/image/upload/v1480006586/jrdev_st8ow2.png'), root_path, alt: 'Junior Dev jobs', method: :get%></div>
         </div>
+        <div id="menu-open" class="pull-right">
+          <a class="fm-button"><i class="fa fa-bars fa-lg"></i></a>
+        </div>
+        <% if user_signed_in? %>
+          <% if current_user.profile.present? %>
+          <%= link_to profile_path(current_user), method: :get do %>
+            <ul class="list-unstyled list-inline pull-right user-details">
+                <li><%= image_tag current_user.profile.image_url(:thumb), class:'img-thumbnile head-image', alt: "#{current_user.profile.name}'s photo'" %></li>
+                <li><h6><%= current_user.profile.name %></h6></li>
+            </ul>
+              <% end %>
+          <% else %>
+          <div class="pull-right user-details">
+            <%= current_user.email %>
+          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </header>
 

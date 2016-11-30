@@ -2,24 +2,26 @@
 
 <%= form_for @search, html: {class: "pure-form"} do |s| %>
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-2">
-    <div class="form-group">
-      <%= s.label :job_type %><br />
-      <%= s.text_field :job_type, class: 'form-control',placeholder: 'eg. Full Time' %>
+  <div class="col-xs-10 col-xs-offset-1">
+    <div class="col-sm-6 col-sm-offset-2">
+      <div class="form-group">
+        <%= s.label :job_type %><br />
+        <%= s.text_field :job_type, class: 'form-control',placeholder: 'eg. Full Time' %>
+      </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-sm-offset-2">
-    <div class="form-group">
-      <%= s.label :position %><br />
-      <%= s.text_field :position, class: 'form-control', placeholder: 'eg. Part Time' %>
+    <div class="col-sm-6 col-sm-offset-2">
+      <div class="form-group">
+        <%= s.label :position %><br />
+        <%= s.text_field :position, class: 'form-control', placeholder: 'eg. Part Time' %>
+      </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-sm-offset-2">
-    <div class="form-group">
-      <%= s.label :location %><br />
-      <%= s.text_field :location, class: 'form-control', placeholder: 'eg. Melbourne' %>
+    <div class="col-sm-6 col-sm-offset-2">
+      <div class="form-group">
+        <%= s.label :location %><br />
+        <%= s.text_field :location, class: 'form-control', placeholder: 'eg. Melbourne' %>
+      </div>
     </div>
+    <div class="actions col-sm-6 col-sm-offset-2"><%= s.submit "Search", class: "pure-button pure-button-primary btn btn-lg btn-primary" %></div>
   </div>
-  <div class="actions col-sm-6 col-sm-offset-2"><%= s.submit "Search", class: "pure-button pure-button-primary btn btn-lg btn-primary" %></div>
 </div>
 <% end %>
