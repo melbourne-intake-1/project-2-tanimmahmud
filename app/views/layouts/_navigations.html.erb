@@ -20,7 +20,7 @@
               <li><%= link_to "#{current_user.profile.name}", profile_path(current_user.profile), method: :get %></li>
             <% end %>
             <% if unread_messages_count > 0 %>
-              <li><%= link_to "Inbox", inbox_path, method: :get %><span class="badge"><%=unread_messages_count%></span></li>
+              <li><%= link_to "Inbox (#{unread_messages_count})", inbox_path, method: :get %></li>
             <% else %>
               <li><%= link_to "Inbox", inbox_path, method: :get %></li>
             <% end %>
