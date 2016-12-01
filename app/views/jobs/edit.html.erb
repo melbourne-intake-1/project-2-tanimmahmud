@@ -4,4 +4,55 @@
     <h2>Editing Job</h2>
   </div>
 </div>
-<%= render 'form', job: @job %>
+<div class="container">
+  <%= simple_form_for(@job) do |f| %>
+    <% if @job.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <h3><%= pluralize(@job.errors.count, "error") %> prohibited this social from being saved:</h3>
+        <ul>
+          <% @job.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- Resume Details Start -->
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :job_type %>
+          <%= f.select :job_type, options_for_select(job_types),{}, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :description %>
+          <%= f.text_area :description, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :position %>
+          <%= f.select :position, options_for_select(positions),{}, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :location %>
+          <%= f.text_area :location, id: 'address',class: 'form-control', onFocus: "geolocate()"%>
+        </div>
+      </div>
+
+          <%= f.hidden_field :day %>
+
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2 actions">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <%= f.hidden_field :status, :value =>'approved' %>
+  <% end %>
+</div>
