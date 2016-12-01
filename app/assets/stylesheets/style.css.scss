@@ -1,6 +1,49 @@
 @import 'http://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:700';
 @import 'https://fonts.googleapis.com/css?family=Pacifico';
+/* ------------------------------------------------------------------
 
+[Table of contents]
+
+
+		1. Global Styles
+		   1.1. Headers
+		   1.2. Links & buttons
+		   1.3. Sections
+		   1.4. Nav tabs and pills
+
+		2. Header
+
+		3. Slider
+		   3.1. Slide wrapper and slides
+		   3.2. Slide content
+		   3.3. Duplicate parts & slices
+		   3.4. Horizontal slices
+		   3.5. Vertical slices
+		   3.6. Background images
+
+		4. Content
+		   4.1. Pagination
+		   4.2. WYSIWYG
+		   4.3. Sharing links
+		   4.4. Sidebar
+		   4.5. Jumbotron
+		   4.6. Forms
+
+		5. Jobs & Resume
+		   5.1. Featured jobs
+		   5.2. Resume
+
+		6. Parallax
+		7. Contact
+		8. Plans & pricing
+		9. Testimonials
+		10. Mobile styles
+				10.1. Big screens
+				10.2. Regular tablets
+				10.3. Small tablets
+				10.4 Smartphones
+
+-------------------------------------------------------------------*/
 
 /* 1. GLOBAL STYLES
 -------------------------------------------------------------------*/
@@ -211,7 +254,7 @@ hr {
 		padding: 15px 0;
 	}
 
-	/* 1.5. NAV TABS AND PILLS
+	/* 1.4. NAV TABS AND PILLS
 	---------------------------------------------------------------*/
 
 	.nav {
@@ -456,7 +499,7 @@ header {
 	}
 
 
-	/* 4.2. PAGINATION
+	/* 4.1. PAGINATION
 	---------------------------------------------------------------*/
 
 	.pagination {
@@ -471,7 +514,7 @@ header {
 				color: #5C6BC0;
 			}
 
-	/* 4.3. WYSIWYG
+	/* 4.2. WYSIWYG
 	---------------------------------------------------------------*/
 
 	.wysihtml5-toolbar {
@@ -548,7 +591,7 @@ header {
 		height: 200px;
 	}
 
-	/* 4.4. SHARING LINKS
+	/* 4.3. SHARING LINKS
 	---------------------------------------------------------------*/
 	#widget-contact h2,
 	#skills h2,
@@ -562,7 +605,7 @@ header {
 		}
 
 
-	/* 4.5. SIDEBAR
+	/* 4.4. SIDEBAR
 	---------------------------------------------------------------*/
 
 	#sidebar h5 {
@@ -591,7 +634,7 @@ header {
 			padding: 0;
 		}
 
-	/* 4.6. JUMBOTRON
+	/* 4.5. JUMBOTRON
 	---------------------------------------------------------------*/
 
 	.container .jumbotron,
@@ -606,7 +649,7 @@ header {
 			margin: 0.5em 0;
 		}
 
-	/* 4.7. FORMS
+	/* 4.6. FORMS
 	---------------------------------------------------------------*/
 
 	label {
@@ -737,7 +780,7 @@ header {
 
 
 
-	/* 5.3. FEATURED JOBS
+	/* 5.1. FEATURED JOBS
 	---------------------------------------------------------------*/
 
 	.featured-job {
@@ -785,7 +828,7 @@ header {
 		margin: 0;
 	}
 
-	/* 5.4. RESUME
+	/* 5.2. RESUME
 	---------------------------------------------------------------*/
 
 	.work-experience h4 {
@@ -834,7 +877,7 @@ header {
 		margin: 15px 0;
 	}
 
-/* 7. PARALLAX
+/* 6. PARALLAX
 -------------------------------------------------------------------*/
 
 .parallax {
@@ -864,7 +907,7 @@ header {
 	background-image: url(http://res.cloudinary.com/dn40jh1kc/image/upload/v1479974738/testimonials_arfdvm.jpg);
 }
 
-/* 8. CONTACT
+/* 7. CONTACT
 -------------------------------------------------------------------*/
 
 #contact {
@@ -885,7 +928,7 @@ header {
 }
 
 
-/* 10. PLANS & PRICING
+/* 8. PLANS & PRICING
 -------------------------------------------------------------------*/
 
 .pricing {
@@ -951,7 +994,7 @@ header {
 			color: #222;
 		}
 
-/* 11. TESTIMONIALS
+/* 9. TESTIMONIALS
 -------------------------------------------------------------------*/
 
 #testimonials .owl-carousel {
@@ -1001,10 +1044,10 @@ footer span {
   font-family: 'Pacifico', cursive;
 }
 
-/* 17. MOBILE SITES
+/* 10. MOBILE SITES
 -------------------------------------------------------------------*/
 
-	/* 17.1. BIG SCREENS
+	/* 10.1. BIG SCREENS
 	---------------------------------------------------------------*/
 	@media (min-width: 1200px) {
 
@@ -1045,7 +1088,7 @@ footer span {
 
 	}
 
-	/* 17.2. REGULAR TABLETS
+	/* 10.2. REGULAR TABLETS
 	---------------------------------------------------------------*/
 	@media (max-width: 991px) {
 
@@ -1065,7 +1108,7 @@ footer span {
 
 	}
 
-	/* 17.3. SMALL TABLETS
+	/* 10.3. SMALL TABLETS
 	---------------------------------------------------------------*/
 	@media (max-width: 767px) {
 
@@ -1152,7 +1195,7 @@ footer span {
 
 	}
 
-	/* 17.4. SMARTPHONES
+	/* 10.4. SMARTPHONES
 	---------------------------------------------------------------*/
 	@media (max-width: 480px) {
 
@@ -1192,20 +1235,6 @@ footer span {
 
 		.jobs .data span {
 			display: block;
-		}
-
-		#searchbox {
-			background: #5C6BC0;
-			left: 0;
-			opacity: 0;
-			padding: 5px 15px;
-			position: absolute;
-			top: -62px;
-			width: 100%;
-		}
-
-		#searchfield {
-			width: 100%;
 		}
 
 		img.pull-left,
