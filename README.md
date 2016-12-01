@@ -67,8 +67,17 @@ Companies will also be able to create and account and post jobs if they think th
 
 ![Schema](/wireframes/schema.png "Schema")
 
-### Project plan and estimation
+## Project plan and estimation
 
 ### Used [Trello](https://trello.com/b/NTnHx7ao) for plan and estimation
 
-## Trello Board Link https://trello.com/b/NTnHx7ao
+###  Trello Board Link https://trello.com/b/NTnHx7ao
+
+## Tools and methodologies
+
+* Project management tool to be used to track progress of build. :white_check_mark:
+* Show evidence of Slack conversations or use of other communication tools. :negative_squared_cross_mark:
+* Code review. Demonstrate that you have had your code reviewed by other students and that you have provided a code review for others. :negative_squared_cross_mark:
+* Github. Demonstrate use of frequent commits, pull requests, documentation. :white_check_mark:
+* Use Agile development methodologies. :white_check_mark:
+* Provide evidence you have used code quality tools (eg. Traceroute, Bullet, Brakeman, Rails Best Practices tool, RuboCop, RubyCritic, CodeClimate). :negative_squared_cross_mark:
