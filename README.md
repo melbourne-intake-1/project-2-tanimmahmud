@@ -77,11 +77,32 @@ Companies will also be able to create and account and post jobs if they think th
 
 * [Trello](https://trello.com/b/NTnHx7ao) - as a project management tool to track progress, plan and estimate.
 * [DbDesigner](https://dbdesigner.net/) - for database design and determining relationship between models.
-* [Hosted on Figma](https://www.figma.com/file/ITvhnOhJkzG3xJcFedHzBERt/user-stories) - to draw and host workflow diagram of the user journey/s.
+* [Figma](https://www.figma.com/file/ITvhnOhJkzG3xJcFedHzBERt/user-stories) - to draw and host workflow diagram of the user journey/s.
 * [Balsamiq Mockups](https://balsamiq.com/products/mockups/) - for wireframing.
+* [Cloudinary](http://cloudinary.com/) - For managing image and file in the cloud.
+* [Mailgun](https://mailgun.com) - for emails.
+* [Heroku](https://www.heroku.com/) - to host the app.
 * [Atom](https://atom.io/) - as a test editor.
 * [Git](https://git-scm.com/) - For version control.
 * [Github](https://github.com/tanimmahmud/JrDevJobs) - as an online repository
+
+#### Gems
+
+* [Devise](https://github.com/plataformatec/devise) - ```gem 'devise'
+ ``` for User authentication
+* [Stripe](https://github.com/stripe/stripe-ruby) - ```gem 'stripe'``` for payment
+* [Figaro](https://github.com/laserlemon/figaro) - ```gem 'figaro'``` for env variables
+* [Bootstrap Sass](https://github.com/twbs/bootstrap-sass) - ```gem 'bootstrap-sass'``` for easy styling.
+* [Bootstrap Will Paginate](https://github.com/bootstrap-ruby/will_paginate-bootstrap) - ```gem 'bootstrap-will_paginate'``` for pagination styling
+* [Mailboxer](https://github.com/mailboxer/mailboxer) - ```gem "mailboxer"``` for internal messaging.
+* [Chosen Rails](https://github.com/tsechingho/chosen-rails) - ```gem 'chosen-rails'``` for making long, unwieldy message select boxes more user friendly.
+* [Carrierwave](https://github.com/carrierwaveuploader/carrierwave) - ```gem 'carrierwave'``` for a simple and extremely flexible way to upload files
+* [Cloudinary](https://github.com/cloudinary/cloudinary_gem) - ```gem 'cloudinary'``` for easily upload image to the cloud.
+* [Simple Form](https://github.com/plataformatec/simple_form) - ```gem 'simple_form'``` to make rails form easily.
+* [Bootstrap Date Picker](https://github.com/Nerian/bootstrap-datepicker-rails) - ```gem 'bootstrap-datepicker-rails'``` to help picking date.
+* [sqlite3](https://rubygems.org/gems/sqlite3/versions/1.3.11) - ```gem 'sqlite3'``` as development DB
+* [pg](https://rubygems.org/gems/pg/versions/0.18.4) - ```gem 'pg'``` as production DB
+
 
 ### Assignment Criteria
 
