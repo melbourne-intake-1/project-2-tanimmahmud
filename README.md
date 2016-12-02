@@ -75,6 +75,14 @@ Companies will also be able to create and account and post jobs if they think th
 
 ### Tools Used
 
+* [Trello](https://trello.com/b/NTnHx7ao) - as a project management tool to track progress, plan and estimate.
+* [DbDesigner](https://dbdesigner.net/) - for database design and determining relationship between models.
+* [Hosted on Figma](https://www.figma.com/file/ITvhnOhJkzG3xJcFedHzBERt/user-stories) - to draw and host workflow diagram of the user journey/s.
+* [Balsamiq Mockups](https://balsamiq.com/products/mockups/) - for wireframing.
+* [Atom](https://atom.io/) - as a test editor.
+* [Git](https://git-scm.com/) - For version control.
+* [Github](https://github.com/tanimmahmud/JrDevJobs) - as an online repository
+
 ### Assignment Criteria
 
 :white_check_mark: = Done | :negative_squared_cross_mark: = Partially Done | :x: = Not Done
