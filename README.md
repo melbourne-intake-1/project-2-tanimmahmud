@@ -103,6 +103,11 @@ Companies will also be able to create and account and post jobs if they think th
 * [sqlite3](https://rubygems.org/gems/sqlite3/versions/1.3.11) - ```gem 'sqlite3'``` as development DB
 * [pg](https://rubygems.org/gems/pg/versions/0.18.4) - ```gem 'pg'``` as production DB
 
+#### APIs
+
+* [Stripe](https://stripe.com/au) - for payments
+* [Place Autocomplete](https://developers.google.com/places/web-service/autocomplete) - to autocomplete address.
+
 
 ### Assignment Criteria
 
