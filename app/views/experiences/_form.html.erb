@@ -6,7 +6,7 @@
         <div  class="alert alert-danger">
           <h3><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h3>
 
-          <ul>
+          <ul class="list-unstyled">
           <% @experience.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>

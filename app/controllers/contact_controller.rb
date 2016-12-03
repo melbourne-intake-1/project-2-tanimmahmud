@@ -13,11 +13,9 @@ class ContactController < ApplicationController
     if (email.present? && message.present?)
       # Tell the ContactMailer to send an email
       ContactMailer.send_contact_email(name,email,subject,message).deliver_later
-      flash[:success] = 'Email sent! Thank you for you email.'
-      redirect_to root_path, notice: 'Email sent!'
+      redirect_to root_path, notice: 'Email sent! Thank you for you email.'
     else
-      flash[:warning] = 'Please fill out the form'
-      redirect_to root_path
+      redirect_to root_path, alert: 'Please fill out the form'
     end
   end
 end

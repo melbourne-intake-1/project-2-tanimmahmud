@@ -4,7 +4,7 @@
     <% if job.errors.any? %>
       <div id="error_explanation" class="alert alert-danger">
         <h3><%= pluralize(job.errors.count, "error") %> prohibited this social from being saved:</h3>
-        <ul>
+        <ul class="list-unstyled">
           <% job.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>

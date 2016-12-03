@@ -5,7 +5,7 @@
       <div id="error_explanation" class="alert alert-danger">
         <h3><%= pluralize(@skill.errors.count, "error") %> prohibited this skill from being saved:</h3>
 
-        <ul>
+        <ul class="list-unstyled">
         <% skill.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
