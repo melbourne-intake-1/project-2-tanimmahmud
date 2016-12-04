@@ -35,10 +35,9 @@
 				<div class="sidebar-widget" id="share">
 					<h2>Share this job</h2>
 					<ul>
-						<li><a href="https://www.facebook.com"><i class="fa fa-facebook fa-3x"></i></a></li>
-						<li><a href="https://twitter.com/home"><i class="fa fa-twitter fa-3x"></i></a></li>
-						<li><a href="https://plus.google.com/share"><i class="fa fa-google-plus fa-3x"></i></a></li>
-						<li><a href="https://www.linkedin.com"><i class="fa fa-linkedin fa-3x"></i></a></li>
+						<li><a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=<%= url_for([@job, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook fa-3x"></i></a></li>
+						<li><a onclick="javascript:window.open('http://twitter.com/share?text=<%= @job.position %> @<%= @job.user %> - &amp;url=<%= url_for([@job, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter fa-3x"></i></a></li>
+						<li><a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@job, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus fa-3x"></i></a></li>
 					</ul>
 				</div>
 				<hr>
