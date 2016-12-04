@@ -35,6 +35,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'simple_form'
 gem 'bootstrap-datepicker-rails'
+gem 'redcarpet'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

@@ -91,11 +91,11 @@
       <div class="col-sm-12">
         <div class="form-group" id="resume-content-group">
           <% if current_user.role == 'company' %>
-            <%= f.label :description, 'Company Details' %>
+            <%= f.label :description, 'Company Details (*markdown friendly)' %>
           <% elsif current_user.role == 'candidate' %>
-            <%= f.label :description, 'Resume Content' %>
+            <%= f.label :description, 'Resume Content (*markdown friendly)' %>
           <% end %>
-          <%= f.text_area :description, id: 'resume-content',class: 'form-control', rows: 5%>
+          <%= f.text_area :description, id: 'resume-content',class: 'form-control', rows:16%>
         </div>
       </div>
     </div>

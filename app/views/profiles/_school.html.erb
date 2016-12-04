@@ -9,7 +9,7 @@
       <h5><%=  school.name %> <h5>
       <h4><%= school.qualification %></h4>
       <h4><%= DateTime.parse(school.start).strftime('%B %Y') %> - <%= DateTime.parse(school.end).strftime('%B %Y')%></h4>
-      <p><%= school.notes %></p>
+      <p><%= markdown school.notes %></p>
       <% if user_signed_in? %>
         <% if current_user == @profile.user %>
         <p>

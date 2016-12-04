@@ -23,12 +23,6 @@
       </div>
       <div class="col-sm-8 col-sm-offset-2">
         <div class="form-group">
-          <%= f.label :description %>
-          <%= f.text_area :description, class: 'form-control' %>
-        </div>
-      </div>
-      <div class="col-sm-8 col-sm-offset-2">
-        <div class="form-group">
           <%= f.label :position %>
           <%= f.select :position, options_for_select(positions),{}, class: 'form-control'  %>
         </div>
@@ -43,6 +37,12 @@
         <div class="form-group">
           <%= f.label :day, 'Number of days' %> (Per day $100 AUD)
           <%= f.text_field 'day',class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :description, 'job details (* markdown friendly)' %>
+          <%= f.text_area :description, class: 'form-control', rows: 16 %>
         </div>
       </div>
     </div>
