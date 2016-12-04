@@ -28,12 +28,6 @@
       </div>
       <div class="col-sm-8 col-sm-offset-2">
         <div class="form-group">
-          <%= f.label :description %>
-          <%= f.text_area :description, class: 'form-control' %>
-        </div>
-      </div>
-      <div class="col-sm-8 col-sm-offset-2">
-        <div class="form-group">
           <%= f.label :position %>
           <%= f.select :position, options_for_select(positions),{}, class: 'form-control'  %>
         </div>
@@ -42,6 +36,12 @@
         <div class="form-group">
           <%= f.label :location %>
           <%= f.text_area :location, id: 'address',class: 'form-control', onFocus: "geolocate()"%>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="form-group">
+          <%= f.label :description, 'job details (* markdown friendly)' %>
+          <%= f.text_area :description, class: 'form-control', rows: 16 %>
         </div>
       </div>
 

@@ -37,7 +37,7 @@
 
               <%= image_tag @profile.image_url(), class: 'pull-left profile-image', alt: "#{@profile.name}'s photo'" %>
 
-  						<p><%= @profile.description %></p>
+  						<p><%= markdown @profile.description %></p>
             </div>
 
             <% if @profile.user.role == 'candidate' %>

@@ -41,8 +41,8 @@
       </div>
       <div class="col-sm-8 col-sm-offset-2">
         <div class="form-group">
-          <%= f.label :notes %>
-          <%= f.text_area :notes, placeholder: '(Optional)', class: 'form-control' %>
+          <%= f.label :notes, 'notes (* markdown friendly)' %>
+          <%= f.text_area :notes, placeholder: '(Optional)', class: 'form-control', rows: 16 %>
         </div>
       </div>
     </div>
